@@ -4,17 +4,18 @@
   --clr-primary: hsl(0, 100%, 50%);
   --clr-semi-primary: hsl(0, 100%, 30%);
   --clr-secondary: hsl(0, 0%, 12%);
-  --ff-primary: "Anybody", sans-serif;
+  --ff-primary: 'Anybody', sans-serif;
 
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;
 
-  --fs-primary-heading: 2rem;
-  --fs-secondary-heading: 1.5rem;
+  --fs-primary-heading: 3rem;
+  --fs-secondary-heading: 2rem;
   --fs-h3-heading: 1.2rem;
   --fs-paragraph: 1rem;
   --fs-button: 1rem;
+  --fs-link: 1.1rem;
 
   --size-100: 0.25rem;
   --size-200: 0.5rem;
@@ -36,13 +37,24 @@
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
   line-height: 1.1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
   line-height: 1.1;
 }
+.bold{
+  font-weight: var(--fw-bold);
+}
 
 /* general styling */
+html, body {
+  font-size: 18px;
+  font-family: 'Anybody', sans-serif;
+}
+
 .button {
   cursor: pointer;
   border: 0;
@@ -58,4 +70,15 @@
 .button:hover,
 .button:focus-visible {
   background-color: var(--);
+}
+.navbar{
+ margin: 0 3rem; 
+}
+.hero-navigation .nav-link{
+  color: var(--clr-secondary);
+  display: flex;
+  justify-content: center;
+}
+.nav-link.active{
+  color: var(--clr-primary);
 }
