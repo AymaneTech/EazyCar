@@ -1,0 +1,26 @@
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+}
+.second-section{
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/bg/bg-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.items {
+    display: flex;
+    gap: 2rem;
+}
+.item{
+    width: 300px;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    margin-bottom: 16px;
+}
