@@ -44,6 +44,7 @@
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
   line-height: 1.5;
+  margin-top: 1rem;
 }
 .clr-primary{
   color: var(--clr-primary);
@@ -62,7 +63,8 @@ html, body {
   cursor: pointer;
   border: 3px solid var(--clr-primary);
   border-radius: 100vmax;
-  padding: 1em 2.5em;
+  padding: 1em 1em;
+  min-width: 150px;
   font-weight: var(--fw-bold);
   font-size: var(--fs-button);
   line-height: 1;
