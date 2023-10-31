@@ -13,8 +13,6 @@ filterMenuItem.forEach(item => {
             else{
                 filter.style.display = "block";
             }
-            
         });
-    })
-    
+    });
 });
