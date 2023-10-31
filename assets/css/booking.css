@@ -109,10 +109,16 @@
     padding-top: 8px;
     border-radius: 32px !important;
     max-width: 400px !important;
+    transition: .5s ease;
+}
+.card:hover{
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.4rem 3rem rgba(0,0,0,.3);
 }
 
 .card-img-top {
     border-radius: 32px !important;
+    height: 250px;
 }
 
 .details {
