@@ -32,6 +32,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Anybody';
 }
 /* utility classes */
 .fs-primary-heading {
@@ -52,10 +53,14 @@
 .bold{
   font-weight: var(--fw-bold);
 }
+h3{
+  font-size: var(--size-500) !important;
+  font-weight: bold !important;
+}
 
 /* general styling */
 html, body {
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Anybody', sans-serif;
 }
 

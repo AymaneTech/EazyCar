@@ -137,6 +137,22 @@
     font-weight: var(--fw-regular);
 }
 
+.pagination-item a{
+    border: 2px solid var(--clr-primary);
+    color: var(--clr-primary);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+}
+
+.active-page, .pagination-item a:hover{
+    color: #fff !important;
+    background: var(--clr-primary);
+}
+
+
+
+
 /* cards media query */
 @media (min-width: 992px) { 
     .cards.row .card {
