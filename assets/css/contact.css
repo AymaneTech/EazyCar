@@ -36,3 +36,6 @@ html, body{
     display: flex;
     gap:10%
 }
+.nav-link {
+    color: #fff !important;
+}
