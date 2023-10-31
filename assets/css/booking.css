@@ -101,7 +101,9 @@
 /* cards */
 .card {
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-    background: #DADADa;
+    background: #DADADa !important;
+    padding-top: 8px;
+    border-radius: 32px !important;
 }
 .card-img-top{
     border-radius: 32px !important;
@@ -134,3 +136,10 @@
     color: #8C8080;
     font-weight: var(--fw-regular);
 }
+
+/* cards media query */
+@media (min-width: 992px) { 
+    .cards.row .card {
+        flex: 1 0 calc(33.333% - 1rem);
+      }
+  }
