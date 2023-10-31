@@ -105,7 +105,6 @@
 /* cards */
 .card {
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
-    background: #DADADa !important;
     padding-top: 8px;
     border-radius: 32px !important;
     max-width: 400px !important;
