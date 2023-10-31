@@ -32,9 +32,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--ff-primary);
 }
 /* utility classes */
-.fs-primary-heading {
+ .fs-primary-heading {
   font-size: var(--fs-primary-heading);
   line-height: 1.1;
   text-align: center;
@@ -47,12 +48,11 @@
 }
 .bold{
   font-weight: var(--fw-bold);
-}
+} 
 
 /* general styling */
 html, body {
   font-size: 18px;
-  font-family: 'Anybody', sans-serif;
 }
 
 .button {
@@ -81,4 +81,4 @@ html, body {
 }
 .nav-link.active{
   color: var(--clr-primary);
-}
+} 
