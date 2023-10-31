@@ -108,6 +108,7 @@
     background: #DADADa !important;
     padding-top: 8px;
     border-radius: 32px !important;
+    max-width: 400px !important;
 }
 
 .card-img-top {
