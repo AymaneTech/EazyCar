@@ -1,9 +1,6 @@
 const filterMenuItem = document.querySelectorAll(".filter-btn");
 const carItem = document.querySelectorAll(".card");
 
-console.log(filterMenuItem);
-console.log(carItem);
-
 filterMenuItem.forEach(item => {
     item.addEventListener("click", function() {
         let value = this.getAttribute("data-filter");
