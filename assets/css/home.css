@@ -1,0 +1,38 @@
+/* html {
+    width: 100vw;
+    height: auto;
+}
+
+body {
+    min-height: 5000px;
+    overflow-x: hidden;
+} */
+.hero {
+    padding-top: 1rem;
+}
+.text-center h1 {
+    color: red;
+}
+
+
+.thisis {
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+@media (max-width:767px) {
+    .thisis{
+        gap: 1rem;
+    }
+    .collapse {
+        padding: 2rem 0;
+        background-color: red !important;
+    }
+    .nav-link {
+        color: var(--clr-secondary) !important;
+        font-size: 1.5rem;
+    }
+
+}

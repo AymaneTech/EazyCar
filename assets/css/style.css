@@ -32,6 +32,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'anybody';
 }
 /* utility classes */
 .fs-primary-heading {
@@ -98,4 +99,8 @@ html, body {
 }
 .navbar-toggler {
   border: none !important;
+}
+
+.nav-link {
+  color:var(--clr-secondary) !important;
 }
