@@ -154,6 +154,7 @@
     font-weight: var(--fw-regular);
 }
 
+
 .pagination-item a {
     border: 2px solid var(--clr-primary);
     color: var(--clr-primary);
