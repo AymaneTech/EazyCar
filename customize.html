@@ -61,8 +61,8 @@
     </div>
   </nav>
   <!-- main content -->
-  <main>
-    <section class="container-fluid">
+  <main class="py-5">
+    <section class="container-fluid pt-5">
       <div class="details-section row px-0 mx-0">
         <div class="images col-md-6">
           <div class="main-img text-light p-5">
@@ -109,16 +109,48 @@
               <strong>70L</strong>
             </div>
           </div>
-          <div class="pricing mt-5 d-flex justify-content-between">
+          <div class="pricing mt-5 d-flex align-items-baseline justify-content-between">
             <strong>80.00 DH/ <span>Days</span></strong>
-            <button class="button-inverted">Rent Now</button>
+            <button class="button button-inverted">Rent Now</button>
           </div>
         </div>
-
       </div>
     </section>
-   
-    
+    <section class="customize-section py-5 px-3 d-flex justify-content-around">
+      <div class="card customize-card p-5">
+        <div class="customize-item py-3">
+          <label class="mb-3" for="Toit">Toit</label>
+          <select class="form-select" aria-label="Default select ">
+            <option selected>Panoramic</option>
+            <option value="1">Electric</option>
+            <option value="2">Manual</option>
+          </select>
+        </div>
+        <div class="customize-item py-3">
+          <label class="mb-3" for="Toit">High end audio system</label>
+          <select class="form-select" aria-label="Default select ">
+            <option selected>Dolby</option>
+            <option value="1">Atmos</option>
+            <option value="2">Atmos</option>
+          </select>
+        </div>
+        <div class="customize-item py-3">
+          <label class="mb-3" for="Toit">Station</label>
+          <select class="form-select" aria-label="Default select ">
+            <option selected>CD</option>
+            <option value="1">Radio</option>
+            <option value="2">Tactile</option>
+          </select>
+        </div>
+        <div class="buttons-section d-flex gap-2">
+          <button class="button">Reset</button>
+          <button class="button-inverted">Save</button>
+        </div>
+      </div>
+      <div class="car-ss">
+        <img src="./assets/images/bg/details4.png" alt="">
+      </div>
+    </section>
   </main>
 
   <!-- footer -->
