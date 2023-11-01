@@ -177,17 +177,19 @@
 }
 
 /* details page */
-.images{
-    width: 40vw;
-}
+
 .details-section .main-img{
     background: var(--clr-primary);
     border-radius: 10px;
+    width: 100%;
 }
 .second-img img{
-    width: 200px;
+    width: ;
     height: 135px;
 }
-.img-desc{
-    widh 
+.car-name img{
+    width: 80px;
+}
+.car-name span{
+    font-size: 12px;
 }
