@@ -174,3 +174,19 @@
         flex: 1 0 calc(33.333% - 1rem);
     }
 }
+
+/* details page */
+.images{
+    width: 40vw;
+}
+.details-section .main-img{
+    background: var(--clr-primary);
+    border-radius: 10px;
+}
+.second-img img{
+    width: 200px;
+    height: 135px;
+}
+.img-desc{
+    widh 
+}
