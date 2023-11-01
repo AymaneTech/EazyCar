@@ -10,7 +10,7 @@ filterMenuItem.forEach(item => {
                 filter.style.display = "none";
             }
 
-            else{
+            else{ 
                 filter.style.display = "block";
             }
         });
