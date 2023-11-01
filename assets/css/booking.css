@@ -110,9 +110,10 @@
     max-width: 400px !important;
     transition: .5s ease;
 }
-.card:hover{
+
+.card:hover {
     transform: translateY(-0.2rem);
-    box-shadow: 0 0.4rem 3rem rgba(0,0,0,.3);
+    box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, .3);
 }
 
 .card-img-top {
@@ -177,17 +178,59 @@
 }
 
 /* details page */
-.images{
-    width: 40vw;
-}
-.details-section .main-img{
+
+.details-section .main-img {
     background: var(--clr-primary);
     border-radius: 10px;
+    width: 100%;
 }
-.second-img img{
-    width: 200px;
+
+.second-img img {
+    width: ;
     height: 135px;
 }
-.img-desc{
-    widh 
+
+.car-name img {
+    width: 80px;
+}
+
+.car-name span {
+    font-size: 12px;
+}
+
+.primary-gray {
+    color: #596780;
+}
+
+.light-gray {
+    color: #90A3BF;
+}
+
+.button-inverted {
+    cursor: pointer;
+    border-radius: 100vmax;
+    min-width: 150px;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-button);
+    line-height: 1;
+    color: #fff;
+    background: var(--clr-primary);
+    box-shadow: 0 1.125em 1em -1em var(--clr-semi-primary);
+    transition: .5s ease;
+    border: none;
+}
+
+.button-inverted.active,
+.button-inverted:hover {
+    background: #fff;
+    color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+    font-size: var(--fs-button);
+}
+.customize-card .customize-item:hover{
+    transform: none;
+    box-shadow: none;
+}
+.form-select{
+    border-radius: 16px;
 }
