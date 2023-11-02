@@ -234,3 +234,12 @@
 .form-select{
     border-radius: 16px;
 }
+
+
+.rent-now {
+    padding: .5rem 1.5rem;
+    border: solid red 3px;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 1rem;
+}
