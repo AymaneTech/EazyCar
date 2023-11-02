@@ -7,6 +7,8 @@ var carName = document.querySelectorAll(".card-title");
 var carDesc = document.querySelectorAll(".card-text");
 var carPrice = document.querySelectorAll(".card-price");
 var carImage = document.querySelectorAll(".card-img-top");
+var btns = document.querySelectorAll("#openModalButton");
+const modals = document.querySelector("#carModal");
 
 for (var i = 0; i < cards.length; i++) {
     carName[i].textContent = carsdata[i].name;
@@ -15,8 +17,6 @@ for (var i = 0; i < cards.length; i++) {
     carImage[i].src = carsdata[i].image;
 
 }
-var btns = document.querySelectorAll("#openModalButton");
-const modals = document.querySelector("#carModal")
 
 btns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
@@ -44,7 +44,4 @@ btns.forEach((btn, index) => {
         var myModal = new bootstrap.Modal(document.getElementById('carModal')); 
         myModal.show();
     });
-
-   
 });
-
