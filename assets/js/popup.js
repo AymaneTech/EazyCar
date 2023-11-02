@@ -1,21 +1,23 @@
-// Select the button and the popup container
-const popupButton = document.getElementById("popupButton");
-const popupContainer = document.getElementById("popupContainer");
-const closePopup = document.getElementById("closePopup");
+var carsdata = (JSON.parse(localStorage.getItem("carsData")));
 
-// Event listener to open the popup
-popupButton.addEventListener("click", () => {
-  popupContainer.style.display = "block";
+var btns = document.querySelectorAll("#openModalButton");
+
+
+btns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        var myModal = new bootstrap.Modal(document.getElementById('carModal'));
+        myModal.show();
+
+        
+    });
+
 });
 
-// Event listener to close the popup
-closePopup.addEventListener("click", () => {
-  popupContainer.style.display = "none";
-});
 
-// Optional: Close the popup when clicking outside of it
-popupContainer.addEventListener("click", (event) => {
-  if (event.target === popupContainer) {
-    popupContainer.style.display = "none";
-  }
-});
+// btns.forEach(element => {
+//     element.addEventListener("click", function () {
+//         carName[i].textContent = carsdata[i].name;
+//         carDesc[i].textContent = carsdata[i].description;
+//         carImage[i].src = carsdata[i].image;
+//     });
+// });

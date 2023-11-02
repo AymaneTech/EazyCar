@@ -118,6 +118,11 @@ body {
 .nav-list li a {
   color: #fff !important;
 }
+
+#navLink:hover{
+  color: var(--clr-primary);
+  
+}
 /* footer */
 .social-items i{
   font-size: 24px;
