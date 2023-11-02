@@ -183,10 +183,10 @@
     border-radius: 10px;
     width: 100%;
 }
-.second-img img{
+/* .second-img img{
     width: ;
     height: 135px;
-}
+} */
 .car-name img{
     width: 80px;
 }
@@ -198,4 +198,34 @@
 }
 .light-gray{
     color: #90A3BF;
+}
+/* popup  */
+modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Customize modal styles */
+.modal-content {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.modal-title {
+    font-size: 24px;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.price-btn {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.price-btn:hover {
+    background-color: #0056b3;
 }
