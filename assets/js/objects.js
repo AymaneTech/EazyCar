@@ -45,3 +45,4 @@ btns.forEach((btn, index) => {
         myModal.show();
     });
 });
+
