@@ -14,12 +14,37 @@ var customeId = 0;
 
 
 // filling the html content 
-for (var i = 0; i < cards.length; i++) {
+for (let i = 0; i < cards.length; i++) {
   carName[i].textContent = carsdata[i].name;
   carDesc[i].textContent = carsdata[i].description;
   carPrice[i].textContent = carsdata[i].price;
   carImage[i].src = carsdata[i].image;
 }
+// pagination part
+var one = document.getElementById("one");
+var two = document.getElementById("two");
+var three = document.getElementById("three");
+
+two.addEventListener("click", function(){
+  let j = 10;
+  for (let i = 0; i < cards.length; i++) {
+      carName[i].textContent = carsdata[j].name;
+      carDesc[i].textContent = carsdata[j].description;
+      carPrice[i].textContent = carsdata[j].price;
+      carImage[i].src = carsdata[j].image;
+    j++;
+  }
+});
+three.addEventListener("click", function(){
+  let j = 19;
+  for (let i = 0; i < cards.length; i++) {
+      carName[i].textContent = carsdata[j].name;
+      carDesc[i].textContent = carsdata[j].description;
+      carPrice[i].textContent = carsdata[j].price;
+      carImage[i].src = carsdata[j].image;
+    j++;
+  }
+});
 
 // show modal & put data into localstorage to use it in customize page 
 btns.forEach((btn, index) => {
@@ -61,8 +86,6 @@ btns.forEach((btn, index) => {
       console.log(customizeArray);
       localStorage.setItem("carToCustomize", JSON.stringify(customizeArray));
       customeId++;
-
     });
-
   });
 });
