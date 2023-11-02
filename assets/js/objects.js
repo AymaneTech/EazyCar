@@ -1,4 +1,3 @@
-
 var carsdata = (JSON.parse(localStorage.getItem("carsData")));
 
 
