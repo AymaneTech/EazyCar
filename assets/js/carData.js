@@ -95,7 +95,7 @@ const cars = [
         name: "Mazda CX-5",
         price: 29000,
         description: "A stylish and fun-to-drive compact SUV.",
-        image: "./assets/images/booking/car-14.jpg"
+        image: "./assets/images/booking/car-14.webp"
     },
     {
         id: 15,
@@ -130,7 +130,7 @@ const cars = [
         name: "Kia Seltos",
         price: 24000,
         description: "A compact SUV with modern technology features.",
-        image: "./assets/images/booking/car-19.jpg"
+        image: "./assets/images/booking/car-19.webp"
     },
     {
         id: 20,
@@ -139,6 +139,20 @@ const cars = [
         description: "An iconic sports car known for its performance.",
         image: "./assets/images/booking/car-20.jpg"
     },
+    {
+        id: 21,
+        name: "dima koukab",
+        price: 25000,
+        description: "A reliable and fuel-efficient sedan.",
+        image: "./assets/images/booking/car-01.jpg"
+    },
+    {
+        id: 22,
+        name: "dima ocs",
+        price: 22000,
+        description: "A compact car known for its efficiency and style.",
+        image: "./assets/images/booking/car-02.jpg"
+    }
 ];
 
 localStorage.setItem("carsData", JSON.stringify(cars));
