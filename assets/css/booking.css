@@ -186,7 +186,6 @@
 }
 
 .second-img img {
-    width: ;
     height: 135px;
 }
 
@@ -204,42 +203,4 @@
 
 .light-gray {
     color: #90A3BF;
-}
-
-.button-inverted {
-    cursor: pointer;
-    border-radius: 100vmax;
-    min-width: 150px;
-    font-weight: var(--fw-bold);
-    font-size: var(--fs-button);
-    line-height: 1;
-    color: #fff;
-    background: var(--clr-primary);
-    box-shadow: 0 1.125em 1em -1em var(--clr-semi-primary);
-    transition: .5s ease;
-    border: none;
-}
-
-.button-inverted.active,
-.button-inverted:hover {
-    background: #fff;
-    color: var(--clr-primary);
-    border: 2px solid var(--clr-primary);
-    font-size: var(--fs-button);
-}
-.customize-card .customize-item:hover{
-    transform: none;
-    box-shadow: none;
-}
-.form-select{
-    border-radius: 16px;
-}
-
-
-.rent-now {
-    padding: .5rem 1.5rem;
-    border: solid red 3px;
-    border-radius: 100px;
-    font-weight: bold;
-    font-size: 1rem;
 }
