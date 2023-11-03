@@ -52,10 +52,10 @@ function btnModal (index) {
       name: carsdata[index].name,
       price: carsdata[index].price,
       description: carsdata[index].description,
-      image: carsdata[index].image
+      image: carsdata[index].image,
+      category: carsdata[index].category
     };
     customizeArray.push(newCustomize);
-    console.log(customizeArray);
     localStorage.setItem("carToCustomize", JSON.stringify(customizeArray));
     customeId++;
   });
