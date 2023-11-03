@@ -34,7 +34,7 @@ function btnModal (index) {
        </div>
        <div class="pt-4 d-flex justify-content-between gap-4 px-2">
          <button type="button" class="btn fw-medium" data-bs-dismiss="modal">Close</button>
-         <button type="button" class="btn btn1">Rent Now</button>
+         <a href="./devis.html" type="button" class="btn btn1">Rent Now</a>
          <a  type="button" href="./customize.html" class="btn customize fw-medium">Customize</a>
        </div>
      </div>
