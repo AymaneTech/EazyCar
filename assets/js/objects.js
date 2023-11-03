@@ -11,81 +11,160 @@ const modals = document.querySelector("#carModal");
 var customizeArray = [];
 var customeId = 0;
 
+// FUNCTIONS
+function fill(){
+  for (let i = 0; i < cards.length; i++) {
+    carName[i].textContent = carsdata[i].name;
+    carDesc[i].textContent = carsdata[i].description;
+    carPrice[i].textContent = carsdata[i].price;
+    carImage[i].src = carsdata[i].image;
+  }
+}
+function btnModal (index) {
+  modals.innerHTML = ''
+  const html = `<div class="modal-dialog d-flex justify-content-center" role="document">
+     <div class="modal-content d-flex justify-content-center align-items-center mx-0 w-auto pt-4 pb-4">
+     <img class="card-img-top w-100 px-4" src="${carsdata[index].image}" alt="Car Image">
+       <div class="modal-body d-flex flex-column px-4">
+          <div class="d-flex justify-content-between align-items-center">
+         <h2 class="card-title fw-bold fs-4">${carsdata[index].name}</h2>
+         <p class="card-price">${carsdata[index].price}</p>
+         </div>
+         <p class="card-text fw-bold">${carsdata[index].description}</p>
+       </div>
+       <div class="pt-4 d-flex justify-content-between gap-4 px-2">
+         <button type="button" class="btn fw-medium" data-bs-dismiss="modal">Close</button>
+         <button type="button" class="btn btn1">Rent Now</button>
+         <a  type="button" href="./customize.html" class="btn customize fw-medium">Customize</a>
+       </div>
+     </div>
+   </div>`
+
+  modals.insertAdjacentHTML("afterbegin", html)
+  var myModal = new bootstrap.Modal(document.getElementById('carModal'));
+  myModal.show();
+  const customizeBtn = document.querySelector(".customize");
 
 
-// filling the html content 
-for (let i = 0; i < cards.length; i++) {
-  carName[i].textContent = carsdata[i].name;
-  carDesc[i].textContent = carsdata[i].description;
-  carPrice[i].textContent = carsdata[i].price;
-  carImage[i].src = carsdata[i].image;
+  customizeBtn.addEventListener("click", function () {
+    var newCustomize = {
+      id: customeId,
+      name: carsdata[index].name,
+      price: carsdata[index].price,
+      description: carsdata[index].description,
+      image: carsdata[index].image
+    };
+    customizeArray.push(newCustomize);
+    console.log(customizeArray);
+    localStorage.setItem("carToCustomize", JSON.stringify(customizeArray));
+    customeId++;
+  });
+};
+
+function pagination_function (j){
+  for (let i = 0; i < cards.length; i++) {
+    carName[i].textContent = carsdata[j].name;
+    carDesc[i].textContent = carsdata[j].description;
+    carPrice[i].textContent = carsdata[j].price;
+    carImage[i].src = carsdata[j].image;
+  j++;
+}
+}
+
+function PAGES () {
+  one.addEventListener("click", function(){
+    let j = 0;
+    pagination_function (j);  
+    
+  })
+  two.addEventListener("click", function(){
+    let j = 10;
+    pagination_function (j);
+  });
+  three.addEventListener("click", function(){
+    let j = 19;
+    pagination_function (j);
+  });
 }
 // pagination part
 var one = document.getElementById("one");
 var two = document.getElementById("two");
 var three = document.getElementById("three");
 
-two.addEventListener("click", function(){
-  let j = 10;
-  for (let i = 0; i < cards.length; i++) {
-      carName[i].textContent = carsdata[j].name;
-      carDesc[i].textContent = carsdata[j].description;
-      carPrice[i].textContent = carsdata[j].price;
-      carImage[i].src = carsdata[j].image;
-    j++;
-  }
-});
-three.addEventListener("click", function(){
-  let j = 19;
-  for (let i = 0; i < cards.length; i++) {
-      carName[i].textContent = carsdata[j].name;
-      carDesc[i].textContent = carsdata[j].description;
-      carPrice[i].textContent = carsdata[j].price;
-      carImage[i].src = carsdata[j].image;
-    j++;
-  }
+
+
+fill();
+PAGES ();
+
+
+var listButtons = document.querySelectorAll('.list-toggle');
+var gridbuttons = document.querySelectorAll('.grid-toggle');
+var listPopup = document.querySelectorAll('.listPopup');
+
+
+
+var gridhtml = '';
+document.querySelectorAll(".cards").forEach(function(card) {
+    gridhtml += card.innerHTML;
 });
 
-// show modal & put data into localstorage to use it in customize page 
-btns.forEach((btn, index) => {
-  btn.addEventListener('click', function () {
-    modals.innerHTML = ''
-    const html = `<div class="modal-dialog d-flex justify-content-center" role="document">
-       <div class="modal-content d-flex justify-content-center align-items-center mx-0 w-auto pt-4 pb-4">
-       <img class="card-img-top w-100 px-4" src="${carsdata[index].image}" alt="Car Image">
-         <div class="modal-body d-flex flex-column px-4">
-            <div class="d-flex justify-content-between align-items-center">
-           <h2 class="card-title fw-bold fs-4">${carsdata[index].name}</h2>
-           <p class="card-price">${carsdata[index].price}</p>
-           </div>
-           <p class="card-text fw-bold">${carsdata[index].description}</p>
-         </div>
-         <div class="pt-4 d-flex justify-content-between gap-4 px-2">
-           <button type="button" class="btn fw-medium" data-bs-dismiss="modal">Close</button>
-           <button type="button" class="btn btn1">Rent Now</button>
-           <a  type="button" href="./customize.html" class="btn customize fw-medium">Customize</a>
-         </div>
-       </div>
-     </div>`
 
-    modals.insertAdjacentHTML("afterbegin", html)
-    var myModal = new bootstrap.Modal(document.getElementById('carModal'));
-    myModal.show();
-    const customizeBtn = document.querySelector(".customize");
-
-
-    customizeBtn.addEventListener("click", function () {
-      var newCustomize = {
-        id: customeId,
-        name: carsdata[index].name,
-        price: carsdata[index].price,
-        description: carsdata[index].description,
-        image: carsdata[index].image
-      };
-      customizeArray.push(newCustomize);
-      console.log(customizeArray);
-      localStorage.setItem("carToCustomize", JSON.stringify(customizeArray));
-      customeId++;
+gridbuttons.forEach(function(gridbutton) {
+    gridbutton.addEventListener("click", function() {
+        var gridCards = document.querySelectorAll(".cards");
+        gridCards.forEach(function(card) {
+            card.innerHTML = gridhtml;
+        });
     });
+});
+
+listButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+      var gridCards = document.querySelectorAll(".cards");
+      gridCards.forEach(function(card) {
+          card.innerHTML = "";
+        let j = 19;
+          for (let i = 0; i < cards.length; i++) {
+            card.insertAdjacentHTML('beforeend', `<div class="carda flex-column d-flex gap-4 px-5">
+          <div class="d-flex gap-3 shadow  bg-white rounded">
+            <img src="${carsdata[i].image}" class="w-25 card-img-top" alt="Image" style="border-radius: 7%; height: 12rem;">
+            <div class="card-body">
+              <h5 class="card-title">${carsdata[i].name}</h5>
+              <p class="card-text w-50">${carsdata[i].description}</p>
+              <div class="details d-flex align-items-center justify-content-between">
+                <p class="card-price bold m-0 m-0">${carsdata[i].price}</p>
+                <button id="openModalButton" onclick="btnModal(${i})" class="button listPopup">Rent Now</button>
+              </div>
+            </div>
+          </div>
+</div>`)
+          j++;
+        }
+      });
   });
 });
+
+
+const filterMenuItem = document.querySelectorAll(".filter-btn");
+const carItem = document.querySelectorAll(".card");
+
+filterMenuItem.forEach(item => {
+    item.addEventListener("click", function() {
+        let value = this.getAttribute("data-filter");
+
+        carItem.forEach(function(filter) {
+            if(!filter.classList.contains(value)){
+                filter.style.display = "none";
+            }
+
+            else{ 
+                filter.style.display = "block";
+            }
+        });
+    });
+});
+
+
+
+
+
