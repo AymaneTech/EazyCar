@@ -5,7 +5,7 @@ const cars = [
         price: 25000,
         description: "A reliable and fuel-efficient sedan.",
         image: "./assets/images/booking/car-01.jpg",
-        category: "Hybrid"
+        category: "hybird"
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const cars = [
         price: 22000,
         description: "A compact car known for its efficiency and style.",
         image: "./assets/images/booking/car-02.jpg",
-        category: "Hybrid"
+        category: "Classic"
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const cars = [
         price: 35000,
         description: "A popular pickup truck with strong towing capabilities.",
         image: "./assets/images/booking/car-03.jpg",
-        category: "Hybrid"
+        category: "Classic"
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ const cars = [
         price: 23000,
         description: "A comfortable midsize sedan for everyday driving.",
         image: "./assets/images/booking/car-04.jpg",
-        category: "Luxury"
+        category: "Classic"
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const cars = [
         price: 24000,
         description: "A family-friendly sedan with modern features.",
         image: "./assets/images/booking/car-05.jpg",
-        category: "luxury"
+        category: "Classic"
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const cars = [
         price: 28000,
         description: "A compact SUV offering great value for money.",
         image: "./assets/images/booking/car-06.jpg",
-        category: "Hybrid"
+        category: "Luxury"
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ const cars = [
         price: 35000,
         description: "An iconic off-road vehicle known for its ruggedness.",
         image: "./assets/images/booking/car-07.jpg",
-        category: "luxury"
+        category: "Luxury"
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ const cars = [
         price: 24000,
         description: "A stylish and comfortable midsize sedan.",
         image: "./assets/images/booking/car-08.jpg",
-        category: "Hybrid"
+        category: "hybird"
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ const cars = [
         price: 45000,
         description: "A luxury compact car with a sporty feel.",
         image: "./assets/images/booking/car-09.jpg",
-        category: "Luxury"
+        category: "hybird"
     },
     {
         id: 10,
@@ -77,7 +77,7 @@ const cars = [
         price: 22000,
         description: "A versatile and fun-to-drive compact hatchback.",
         image: "./assets/images/booking/car-10.jpg",
-        category: "Hybrid"
+        category: "hybird"
     },
     {
         id: 11,
@@ -85,7 +85,7 @@ const cars = [
         price: 48000,
         description: "An electric car known for its cutting-edge technology.",
         image: "./assets/images/booking/car-11.jpg",
-        category: "Luxury"
+        category: "hybird"
     },
     {
         id: 12,
@@ -93,7 +93,7 @@ const cars = [
         price: 32000,
         description: "A rugged and spacious crossover SUV.",
         image: "./assets/images/booking/car-12.jpg",
-        category: "SUV"
+        category: "Luxury"
     },
     {
         id: 13,
@@ -109,7 +109,7 @@ const cars = [
         price: 29000,
         description: "A stylish and fun-to-drive compact SUV.",
         image: "./assets/images/booking/car-14.webp",
-        category: "SUV"
+        category: "Luxury"
     },
     {
         id: 15,
@@ -133,7 +133,7 @@ const cars = [
         price: 38000,
         description: "A popular midsize SUV for off-road enthusiasts.",
         image: "./assets/images/booking/car-17.jpg",
-        category: "SUV"
+        category: "Luxury"
     },
     {
         id: 18,
@@ -141,7 +141,7 @@ const cars = [
         price: 32000,
         description: "A classic American sports car with iconic styling.",
         image: "./assets/images/booking/car-18.jpg",
-        category: "Sports Car"
+        category: "Classic"
     },
     {
         id: 19,
@@ -149,7 +149,7 @@ const cars = [
         price: 24000,
         description: "A compact SUV with modern technology features.",
         image: "./assets/images/booking/car-19.webp",
-        category: "SUV"
+        category: "classic"
     },
     {
         id: 20,
@@ -157,7 +157,7 @@ const cars = [
         price: 95000,
         description: "An iconic sports car known for its performance.",
         image: "./assets/images/booking/car-20.jpg",
-        category: "Sports"
+        category: "Classic"
     },
     {
         id: 21,
