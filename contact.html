@@ -58,7 +58,7 @@
     <section class="herowin">
       <div class="row">
         <div class="text-center">
-          <div class="d-flex align-items-center justify-content-center">
+          <div class="d-flex align-items-center">
             <div class="hero-text">
               <h1 style="color: #f00">Get In Touch With Us</h1>
               <h4 class="text-light">
@@ -73,24 +73,24 @@
     </section>
 
     <div class="row">
-      <div class="col-md-6 img2">
-        <div class="container-fluid">
-          <div class="containerAll">
-            <div class="item gap-5">
+      <div class="col-md-6 img2 d-flex align-items-center justify-content-center">
+
+          <div class="containerAll w-75">
+            <div class="item ">
               <img src="./assets/images/contact/icons8-location-96 1.png" />
               <div class="infos">
                 <h4 class="text-light">ADDRESS</h4>
                 <p class="text-light">Belleville Center ,07 Safi, Morocco</p>
               </div>
             </div>
-            <div class="item gap-5">
+            <div class="item ">
               <img src="./assets/images/contact/icons8-phone-96 1.png" />
-              <div class="infos tele">
+              <div class="infos">
                 <h4 class="text-light">LETS TALK</h4>
                 <p class="text-light">+212-600000000</p>
               </div>
             </div>
-            <div class="item gap-5">
+            <div class="item">
               <img src="./assets/images/contact/icons8-message-96 1.png" />
               <div class="infos">
                 <h4 class="text-light">GENERAL SUPPORT</h4>
@@ -98,33 +98,32 @@
               </div>
             </div>
           </div>
-        </div>
-
+G
         <!-- <img src="./assets/images/contact/icons8-location-96 1.png">
         <img src="./assets/images/contact/icons8-phone-96 1.png">
         <img src="./assets/images/contact/icons8-message-96 1.png"> -->
         
       </div>
-      <div class="col-md-6 bg-dark p-5">
+      <div class="div-contact col-md-6 bg-dark p-5">
         <form action="">
         <div class="container p-5">
           <div class="fox">
             <h1 class="text-light">SEND US A MESSAGE</h1>
             <div class="mb-3">
-              <label for="name" class="form-label text-light">Tell Us Your Name*</label>
-              <input type="text" class="form-control" id="name" placeholder="Full Name" />
+              <label for="name" class="form-label text-light">Tell Us Your Name </label>
+              <input type="text" class="form-control valuenone" id="name" placeholder="Full Name" />
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label text-light">Tell Us Your Email*</label>
-              <input type="email" class="form-control" id="email" placeholder="example@gmail.com" />
+              <label for="email" class="form-label text-light">Tell Us Your Email </label>
+              <input type="email" class="form-control valuenone" id="email" placeholder="example@gmail.com" />
             </div>
             <div class="mb-3">
-              <label for="phone" class="form-label text-light">Enter Your Phone Number*</label>
-              <input type="text" class="form-control" id="phone" placeholder="+212|0-00000000" />
+              <label for="phone" class="form-label text-light">Enter Your Phone Number </label>
+              <input type="text" class="form-control valuenone" id="phone" placeholder="05/06|00000000" />
             </div>
             <div class="mb-3">
-              <label for="message" class="form-label text-light">Message*</label>
-              <textarea class="form-control pb-5" id="message" placeholder="Write Us A Message" rows="3"></textarea>
+              <label for="message" class="form-label text-light">Message </label>
+              <input class="form-control pb-5 valuenone" id="message" placeholder="Write Us A Message" rows="3"></input>
             </div>
           </div>
           <div class="fox_btn">
@@ -133,55 +132,6 @@
         </div>
       </form>
       </div>
-      <script>
-       
-        const nameInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const phoneInput = document.getElementById("phone");
-        const sendButton = document.getElementById("send-button");
-      
-        
-        // const nameRegex = /^[A-Za-z\s]{5,10}( [A-Za-z\s]{5,10})?$/;
-        // const nameRegex = /^[A-Za-z\s]{5,10}( [A-Za-z\s]{5,10})?$/;
-        const nameRegex = /^[A-Za-z\s]{5,10} [A-Za-z\s]{5,10}$/;
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; 
-        const phoneRegex =  /^0[5-6]+[0-9]{8}$/;
-      
-       
-        function validateInput(input, regex) {
-          if (regex.test(input.value)) {
-            input.classList.remove("is-invalid");
-            input.classList.add("is-valid");
-          } else {
-            input.classList.remove("is-valid");
-            input.classList.add("is-invalid");
-          }
-        }
-
-        
-        nameInput.addEventListener("input", () => {
-          validateInput(nameInput, nameRegex);
-        });
-      
-        emailInput.addEventListener("input", () => {
-          validateInput(emailInput, emailRegex);
-        });
-      
-        phoneInput.addEventListener("input", () => {
-          validateInput(phoneInput, phoneRegex);
-        });
-      
-       
-        sendButton.addEventListener("click", () => {
-          
-          if (nameRegex.test(nameInput.value) && emailRegex.test(emailInput.value) && phoneRegex.test(phoneInput.value)) {
-            
-            alert("Formulaire valide. Vous pouvez l'envoyer.");
-          } else {
-            alert("Le formulaire contient des données non valides. Veuillez corriger les erreurs.");
-          }
-        });
-      </script>
       
     <div class="section3 text-center p-5">
       <img src="./assets/images/contact/Vector Phone.svg" width="65vw" />
@@ -232,7 +182,7 @@
             </div>
         </div>
       </div>
-  
+      <script src="assets/js/contact.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

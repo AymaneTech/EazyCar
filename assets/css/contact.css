@@ -19,18 +19,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: auto;
 }
 .item {
+  width: 60%;
   display: flex;
+  gap: 5vw;
   align-items: center;
-  gap: 10%;
 }
 
 .containerAll {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30%;
   gap: 3vw;
 }
 
@@ -50,7 +51,9 @@ body {
 .cont {
   height: 50%;
 }
-
+.div-contact{
+  height: auto;
+}
 .herowin {
   background-image: url(../images/contact/contact_car1.png);
   background-repeat: no-repeat;
@@ -61,14 +64,11 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .hero-text h1 {
   font-size: 4vw;
 }
 .hero-text h4 {
   font-size: 2vw;
-}
-@media screen and (max-width: 767px) {
 }
 .section3 {
   height: 45vh;
@@ -77,4 +77,38 @@ body {
   justify-content: center;
   align-items: center;
   gap: 25px;
+}
+.infos h4{
+  font-size:2em;
+}
+.infos p{
+  font-size:1em;
+}
+.item img{
+  width: 3em;
+}
+
+@media screen and (max-width: 767px) {
+  .item{
+    width: 100%;
+  }
+  .img2{
+    height: 80vh;
+  }
+  .herowin{
+    height: 80vh;
+    align-items: center;
+    justify-content: start;
+  }
+  .hero-text{
+    text-align: left;
+    padding-left: 20px;
+    width: 70%;
+  }
+  .hero-text h1{
+    font-size: 6vh;
+  }
+  .hero-text h4{
+    font-size: 3vh;
+  }
 }
