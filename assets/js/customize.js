@@ -1,4 +1,5 @@
 const carInfo = (JSON.parse(localStorage.getItem("carToCustomize")));
+var carsdata = (JSON.parse(localStorage.getItem("carsData")));
 
 var nameInfo = document.querySelector(".card-title-personalisation");
 var carCategory = document.querySelector(".car-categorey");
@@ -13,7 +14,7 @@ const day = today.getDate();
 const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 
 const dateElement = document.querySelector("#date-now")
-const marque = document.querySelector("#marque")
+const marque = document.querySelector("#marque");
 
 // customize
 nameInfo.textContent = carInfo[0].name;
@@ -24,3 +25,4 @@ imgInfo.src = carInfo[0].image;
 // devis
 dateElement.textContent = formattedDate;
 marque.textContent = carInfo[0].name;
+console.log(carInfo[0].name);

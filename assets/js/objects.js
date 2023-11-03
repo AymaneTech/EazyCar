@@ -118,6 +118,30 @@ gridbuttons.forEach(function(gridbutton) {
     });
 });
 
+
+      var gridCards = document.querySelectorAll(".cards");
+          card.innerHTML = "";
+        let j = 19;
+          for (let i = 0; i < cards.length; i++) {
+            card.insertAdjacentHTML('beforeend', `<div class="card all classic  col-md-3 col-lg-4 w-100 ">
+            <img class="card-img-top" alt="Image">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              <div class="details d-flex align-items-center justify-content-between">
+                <p class="card-price bold m-0 m-0">
+                  
+                </p>
+                <button id="openModalButton" class="button" onclick="btnModal(0)">Rent Now</button>
+              </div>
+            </div>
+          </div>`)
+          j++;
+        }
+      });
+  });
+});
+
 listButtons.forEach(function(button) {
   button.addEventListener("click", function() {
       var gridCards = document.querySelectorAll(".cards");

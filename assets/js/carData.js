@@ -2,10 +2,11 @@ const cars = [
     {
         id: 1,
         name: "Toyota Camry",
-        price: "25000 DH",
+        price: "2500 DH",
         description: "A reliable and fuel-efficient sedan.",
         image: "./assets/images/booking/car-01.jpg",
-        category: "hybird"
+        category: "hybird",
+        page: 1,
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const cars = [
         price: "22000 DH",
         description: "A compact car known for its efficiency and style.",
         image: "./assets/images/booking/car-02.jpg",
-        category: "Classic"
+        category: "Classic",
+        page: 1,
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ const cars = [
         price: "35000 DH",
         description: "A popular pickup truck with strong towing capabilities.",
         image: "./assets/images/booking/car-03.jpg",
-        category: "Classic"
+        category: "Classic",
+        page: 1,
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ const cars = [
         price: "23000 DH",
         description: "A comfortable midsize sedan for everyday driving.",
         image: "./assets/images/booking/car-04.jpg",
-        category: "Classic"
+        category: "Classic",
+        page: 1,
     },
     {
         id: 5,
@@ -37,7 +41,8 @@ const cars = [
         price: "24000 DH",
         description: "A family-friendly sedan with modern features.",
         image: "./assets/images/booking/car-05.jpg",
-        category: "Classic"
+        category: "Classic",
+        page: 1,
     },
     {
         id: 6,
@@ -45,7 +50,8 @@ const cars = [
         price: "28000 DH",
         description: "A compact SUV offering great value for money.",
         image: "./assets/images/booking/car-06.jpg",
-        category: "Luxury"
+        category: "Luxury",
+        page: 1,
     },
     {
         id: 7,
@@ -53,7 +59,8 @@ const cars = [
         price: "35000 DH",
         description: "An iconic off-road vehicle known for its ruggedness.",
         image: "./assets/images/booking/car-07.jpg",
-        category: "Luxury"
+        category: "Luxury",
+        page: 2,
     },
     {
         id: 8,
@@ -61,7 +68,8 @@ const cars = [
         price: "24000 DH",
         description: "A stylish and comfortable midsize sedan.",
         image: "./assets/images/booking/car-08.jpg",
-        category: "hybird"
+        category: "hybird",
+        page: 2,
     },
     {
         id: 9,
@@ -69,7 +77,8 @@ const cars = [
         price: "45000 DH",
         description: "A luxury compact car with a sporty feel.",
         image: "./assets/images/booking/car-09.jpg",
-        category: "hybird"
+        category: "hybird",
+        page: 2,
     },
     {
         id: 10,
@@ -77,7 +86,8 @@ const cars = [
         price: "22000 DH",
         description: "A versatile and fun-to-drive compact hatchback.",
         image: "./assets/images/booking/car-10.jpg",
-        category: "hybird"
+        category: "hybird",
+        page: 2,
     },
     {
         id: 11,
@@ -85,7 +95,8 @@ const cars = [
         price: "48000 DH",
         description: "An electric car known for its cutting-edge technology.",
         image: "./assets/images/booking/car-11.jpg",
-        category: "hybird"
+        category: "hybird",
+        page: 2,
     },
     {
         id: 12,
@@ -93,7 +104,8 @@ const cars = [
         price: "32000 DH",
         description: "A rugged and spacious crossover SUV.",
         image: "./assets/images/booking/car-12.jpg",
-        category: "Luxury"
+        category: "Luxury",
+        page: 2,
     },
     {
         id: 13,
@@ -101,7 +113,8 @@ const cars = [
         price: "43000 DH",
         description: "A luxury sedan with a well-crafted interior.",
         image: "./assets/images/booking/car-13.jpg",
-        category: "Luxury"
+        category: "Luxury",
+        page: 3,
     },
     {
         id: 14,
@@ -109,7 +122,8 @@ const cars = [
         price: "29000 DH",
         description: "A stylish and fun-to-drive compact SUV.",
         image: "./assets/images/booking/car-14.webp",
-        category: "Luxury"
+        category: "Luxury",
+        page: 3,
     },
     {
         id: 15,
@@ -117,7 +131,8 @@ const cars = [
         price: "52000 DH",
         description: "A premium midsize SUV with a smooth ride.",
         image: "./assets/images/booking/car-15.jpg",
-        category: "Luxury"
+        category: "Luxury",
+        page: 3,
     },
     {
         id: 16,
@@ -125,7 +140,8 @@ const cars = [
         price: "47000 DH",
         description: "A luxury sedan with a comfortable interior.",
         image: "./assets/images/booking/car-16.jpg",
-        category: "Luxury"
+        category: "Luxury",
+        page: 3,
     },
     {
         id: 17,
@@ -133,7 +149,8 @@ const cars = [
         price: "38000 DH",
         description: "A popular midsize SUV for off-road enthusiasts.",
         image: "./assets/images/booking/car-17.jpg",
-        category: "Luxury"
+        category: "Luxury",
+        page: 3,
     },
     {
         id: 18,
@@ -141,40 +158,9 @@ const cars = [
         price: "32000 DH",
         description: "A classic American sports car with iconic styling.",
         image: "./assets/images/booking/car-18.jpg",
-        category: "Classic"
+        category: "Classic",
+        page: 3,
     },
-    {
-        id: 19,
-        name: "Kia Seltos",
-        price: "24000 DH",
-        description: "A compact SUV with modern technology features.",
-        image: "./assets/images/booking/car-19.webp",
-        category: "classic"
-    },
-    {
-        id: 20,
-        name: "Porsche 911",
-        price: "95000 DH",
-        description: "An iconic sports car known for its performance.",
-        image: "./assets/images/booking/car-20.jpg",
-        category: "Classic"
-    },
-    {
-        id: 21,
-        name: "Dima Koukab",
-        price: "25000 DH",
-        description: "A reliable and fuel-efficient sedan.",
-        image: "./assets/images/booking/car-01.jpg",
-        category: "Classic"
-    },
-    {
-        id: 22,
-        name: "Dima Ocs",
-        price: "22000 DH",
-        description: "A compact car known for its efficiency and style.",
-        image: "./assets/images/booking/car-02.jpg",
-        category: "Classic"
-    }
 ];
 
 localStorage.setItem("carsData", JSON.stringify(cars));
