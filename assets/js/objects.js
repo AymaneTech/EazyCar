@@ -12,7 +12,7 @@ var customizeArray = [];
 var customeId = 0;
 
 // FUNCTIONS
-function fill(){
+function fill() {
   for (let i = 0; i < cards.length; i++) {
     carName[i].textContent = carsdata[i].name;
     carDesc[i].textContent = carsdata[i].description;
@@ -20,7 +20,7 @@ function fill(){
     carImage[i].src = carsdata[i].image;
   }
 }
-function btnModal (index) {
+function btnModal(index) {
   modals.innerHTML = ''
   const html = `<div class="modal-dialog d-flex justify-content-center" role="document">
      <div class="modal-content d-flex justify-content-center align-items-center mx-0 w-auto pt-4 pb-4">
@@ -61,29 +61,29 @@ function btnModal (index) {
   });
 };
 
-function pagination_function (j){
+function pagination_function(j) {
   for (let i = 0; i < cards.length; i++) {
     carName[i].textContent = carsdata[j].name;
     carDesc[i].textContent = carsdata[j].description;
     carPrice[i].textContent = carsdata[j].price;
     carImage[i].src = carsdata[j].image;
-  j++;
-}
+    j++;
+  }
 }
 
-function PAGES () {
-  one.addEventListener("click", function(){
+function PAGES() {
+  one.addEventListener("click", function () {
     let j = 0;
-    pagination_function (j);  
-    
+    pagination_function(j);
+
   })
-  two.addEventListener("click", function(){
+  two.addEventListener("click", function () {
     let j = 10;
-    pagination_function (j);
+    pagination_function(j);
   });
-  three.addEventListener("click", function(){
+  three.addEventListener("click", function () {
     let j = 19;
-    pagination_function (j);
+    pagination_function(j);
   });
 }
 // pagination part
@@ -94,7 +94,7 @@ var three = document.getElementById("three");
 
 
 fill();
-PAGES ();
+PAGES();
 
 
 var listButtons = document.querySelectorAll('.list-toggle');
@@ -104,52 +104,28 @@ var listPopup = document.querySelectorAll('.listPopup');
 
 
 var gridhtml = '';
-document.querySelectorAll(".cards").forEach(function(card) {
-    gridhtml += card.innerHTML;
+document.querySelectorAll(".cards").forEach(function (card) {
+  gridhtml += card.innerHTML;
 });
 
 
-gridbuttons.forEach(function(gridbutton) {
-    gridbutton.addEventListener("click", function() {
-        var gridCards = document.querySelectorAll(".cards");
-        gridCards.forEach(function(card) {
-            card.innerHTML = gridhtml;
-        });
+gridbuttons.forEach(function (gridbutton) {
+  gridbutton.addEventListener("click", function () {
+    var gridCards = document.querySelectorAll(".cards");
+    gridCards.forEach(function (card) {
+      card.innerHTML = gridhtml;
     });
-});
-
-
-      var gridCards = document.querySelectorAll(".cards");
-          card.innerHTML = "";
-        let j = 19;
-          for (let i = 0; i < cards.length; i++) {
-            card.insertAdjacentHTML('beforeend', `<div class="card all classic  col-md-3 col-lg-4 w-100 ">
-            <img class="card-img-top" alt="Image">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text"></p>
-              <div class="details d-flex align-items-center justify-content-between">
-                <p class="card-price bold m-0 m-0">
-                  
-                </p>
-                <button id="openModalButton" class="button" onclick="btnModal(0)">Rent Now</button>
-              </div>
-            </div>
-          </div>`)
-          j++;
-        }
-      });
   });
 });
 
-listButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-      var gridCards = document.querySelectorAll(".cards");
-      gridCards.forEach(function(card) {
-          card.innerHTML = "";
-        let j = 19;
-          for (let i = 0; i < cards.length; i++) {
-            card.insertAdjacentHTML('beforeend', `<div class="carda flex-column d-flex gap-4 px-5">
+listButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    var gridCards = document.querySelectorAll(".cards");
+    gridCards.forEach(function (card) {
+      card.innerHTML = "";
+      let j = 19;
+      for (let i = 0; i < cards.length; i++) {
+        card.insertAdjacentHTML('beforeend', `<div class="carda flex-column d-flex gap-4 px-5">
           <div class="d-flex gap-3 shadow  bg-white rounded">
             <img src="${carsdata[i].image}" class="w-25 card-img-top" alt="Image" style="border-radius: 7%; height: 12rem;">
             <div class="card-body">
@@ -162,8 +138,8 @@ listButtons.forEach(function(button) {
             </div>
           </div>
 </div>`)
-          j++;
-        }
-      });
+        j++;
+      }
+    });
   });
 });
