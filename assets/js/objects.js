@@ -24,7 +24,7 @@ function btnModal (index) {
   modals.innerHTML = ''
   const html = `<div class="modal-dialog d-flex justify-content-center" role="document">
      <div class="modal-content d-flex justify-content-center align-items-center mx-0 w-auto pt-4 pb-4">
-     <img class="card-img-top w-100 px-4" src="${carsdata[index].image}" alt="Car Image">
+     <img class="w-75 h-50 px-4 pt-4" src="${carsdata[index].image}" alt="Car Image">
        <div class="modal-body d-flex flex-column px-4">
           <div class="d-flex justify-content-between align-items-center">
          <h2 class="card-title fw-bold fs-4">${carsdata[index].name}</h2>

@@ -5,7 +5,8 @@ const cars = [
         price: 25000,
         description: "A reliable and fuel-efficient sedan.",
         image: "./assets/images/booking/car-01.jpg",
-        category: "Hybrid"
+        category: "Hybrid",
+        imagepng: ".",
     },
     {
         id: 2,
