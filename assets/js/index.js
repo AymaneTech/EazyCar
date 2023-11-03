@@ -24,60 +24,6 @@ for (let i = 0; i < localData.length; i++) {
   cardsParent.insertAdjacentHTML("afterbegin", html);
 }
 
-var listButtons = document.querySelectorAll('.list-toggle');
-var gridbuttons = document.querySelectorAll('.grid-toggle');
-var gridhtml = '';
-document.querySelectorAll(".cards").forEach(function (card) {
-  gridhtml += card.innerHTML;
-});
-
-
-gridbuttons.forEach(function (gridbutton) {
-  gridbutton.addEventListener("click", function () {
-    var gridCards = document.querySelectorAll(".cards");
-    gridCards.forEach(function (card) {
-      card.innerHTML = gridhtml;
-    });
-  });
-});
-function listDisplay (){
-  document.querySelectorAll(".cards").forEach(function (card) {
-    gridhtml += card.innerHTML;
-  });
-  gridbuttons.forEach(function (gridbutton) {
-    gridbutton.addEventListener("click", function () {
-      var gridCards = document.querySelectorAll(".cards");
-      gridCards.forEach(function (card) {
-        card.innerHTML = gridhtml;
-      });
-    });
-  });
-  listButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      var gridCards = document.querySelectorAll(".cards");
-      gridCards.forEach(function (card, index) {
-        var html = "";
-        for (let i = index * 6; i < (index + 1) * 6 && i < localData.length; i++) {
-          html += `<div class="carda flex-column d-flex gap-4 px-5">
-            <div class="d-flex gap-3 shadow bg-white rounded">
-              <img src="${localData[i].image}" class="w-25 card-img-top" alt="Image" style="border-radius: 7%; height: 12rem;">
-              <div class="card-body">
-                <h5 class="card-title">${localData[i].name}</h5>
-                <p class="card-text w-50">${localData[i].description}</p>
-                <div class="details d-flex align-items-center justify-content-between">
-                  <p class="card-price bold m-0">${localData[i].price}</p>
-                  <button onclick="btnModal(${i})" class="button listPopup">Rent Now</button>
-                </div>
-              </div>
-            </div>
-          </div>`;
-        }
-        card.innerHTML = html;
-      });
-    });
-  });
-}
-filterFunction ();
 // ==============================================================
 //                  pagination
 var card = document.querySelectorAll(".card");

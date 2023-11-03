@@ -127,3 +127,10 @@ body {
 .social-items i{
   font-size: 24px;
 }
+.page-num{
+  border: 2px solid var(--clr-primary);
+}
+.page-num:hover{
+  background: var(--clr-primary);
+  color: #fff;
+}
