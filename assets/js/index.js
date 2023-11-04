@@ -93,19 +93,50 @@ openCartButton.addEventListener("click", function () {
   cartModal.show();
 });
 
+// function addCartPanel() {
+//   panierContent.innerHTML = '';
+//   panelArr.forEach((panelItem) => {
+//     const panelItemHTML = `
+//       <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+//         <img class="w-25 h-25" src="${panelItem.image}" alt="">
+//         <div>
+//           <h3>${panelItem.name}</h3>
+//           <p>${panelItem.description}</p>
+//         </div>
+//       </div>
+//     `;
+//     panierContent.innerHTML += panelItemHTML;
+//   });
+// }
 function addCartPanel() {
   panierContent.innerHTML = '';
-  panelArr.forEach((panelItem) => {
+  panelArr.forEach((panelItem, index) => {
     const panelItemHTML = `
-      <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
-        <img class="w-25 h-25" src="${panelItem.image}" alt="">
-        <div>
+      <div class="list-group-item panier-item d-flex justify-content-space-between w-75">
+        <img class="w-50 h-25" src="${panelItem.image}" alt="">
+        <div class="w-50 ms-3">
           <h3>${panelItem.name}</h3>
           <p>${panelItem.description}</p>
+          <button class="button-remove ms-5 removeItem" data-index="${index}" >Remove</button>
         </div>
+       
       </div>
     `;
     panierContent.innerHTML += panelItemHTML;
+  });
+
+  
+  const removeButtons = document.querySelectorAll(".removeItem");
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const index = event.target.getAttribute("data-index");
+      if (index !== null) {
+        panelArr.splice(index, 1); 
+        localStorage.setItem("PanelData", JSON.stringify(panelArr)); 
+        updatePanelCounter(); 
+        addCartPanel(); 
+      }
+    });
   });
 }
 
