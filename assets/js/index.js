@@ -72,3 +72,12 @@ addCard.forEach((element, index) => {
     localStorage.setItem("PanelData", JSON.stringify(panelArr));
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const openCartButton = document.getElementById("openCartButton");
+
+    openCartButton.addEventListener("click", function() {
+        const cartModal = new bootstrap.Modal(document.getElementById("cartModal"));
+        cartModal.show();
+    });
+});
