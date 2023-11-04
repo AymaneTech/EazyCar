@@ -5,8 +5,7 @@ const allcards = document.querySelector(".cards");
 const addCart = document.querySelectorAll("#addCart");
 
 var panelArr = [];
-
-
+var panelCounter = document.getElementById("panelCounter");
 const filterItem = document.querySelectorAll(".filter-btn");
 
 // ==============================================================
@@ -68,6 +67,7 @@ function filterFunction() {
 var addCard = document.querySelectorAll(".addCard");
 addCard.forEach((element, index) => {
   element.addEventListener("click", () => {
+    panelCounter.textContent++;
     panelArr.push(localData[index]);
     localStorage.setItem("PanelData", JSON.stringify(panelArr));
   });
