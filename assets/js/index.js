@@ -21,14 +21,15 @@ for (let i = 0; i < localData.length; i++) {
       <h5 class="card-title">${localData[i].name}</h5>
       <p class="card-text">${localData[i].description}</p>
       <div class="details d-flex align-items-center justify-content-between">
-        <p class="card-price bold m-0 m-0">
+        <p class="card-price bold m-0 m-0">${localData[i].price}
         </p>
-        <button class="button addCard">Rent Now</button>
+        <button class="button addCard" data-index="${i}">Rent Now</button>
       </div>
     </div>
   </div>`;
 
   cardsParent.insertAdjacentHTML("afterbegin", html);
+ 
 }
 
 // ==============================================================
@@ -74,17 +75,35 @@ function filterFunction() {
 function updatePanelCounter() {
   panelCounter.textContent = panelArr.length;
 }
-
 var addCard = document.querySelectorAll(".addCard");
 
-addCard.forEach((element, index) => {
-  element.addEventListener("click", () => {
-    panelArr.push(localData[index]);
-    localStorage.setItem("PanelData", JSON.stringify(panelArr));
-    updatePanelCounter();
-    addCartPanel();
+addCard.forEach((element) => {
+  element.addEventListener("click", (event) => {
+    const index = event.target.getAttribute("data-index");
+
+
+    if ( index >= 0 && index < localData.length) {
+      panelArr.push(localData[index]);
+      localStorage.setItem("PanelData", JSON.stringify(panelArr));
+      updatePanelCounter();
+      addCartPanel();
+    }
   });
 });
+
+
+
+// var addCard = document.querySelectorAll(".addCard");
+
+// addCard.forEach((element, index) => {
+//   element.addEventListener("click", () => {
+//     panelArr.push(localData[index]);
+//     localStorage.setItem("PanelData", JSON.stringify(panelArr));
+//     updatePanelCounter();
+//     addCartPanel();
+//   });
+// });
+
 
 const openCartButton = document.getElementById("openCartButton");
 
@@ -117,6 +136,7 @@ function addCartPanel() {
         <div class="w-50 ms-3">
           <h3>${panelItem.name}</h3>
           <p>${panelItem.description}</p>
+          <p>${panelItem.price}</p>
           <button class="button-remove ms-5 removeItem" data-index="${index}" >Remove</button>
         </div>
        
