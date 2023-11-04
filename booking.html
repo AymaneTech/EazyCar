@@ -53,7 +53,7 @@
           <li class="nav-item text-dark fw-bold fs-3 me-3">
             <span id="panelCounter" class="panel-counter d-flex justify-content-center align-items-center">0</span>
             <i class="bi bi-cart" id="openCartButton"></i>
-        </li>
+          </li>
 
         </ul>
       </div>
@@ -204,28 +204,37 @@
   </footer>
 
   <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- Cart content goes here -->
-                    <ul class="list-group">
-                        <li class="list-group-item">Product 1 - $10</li>
-                        <li class="list-group-item">Product 2 - $20</li>
-                        <li class="list-group-item">Product 3 - $15</li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Checkout</button>
-                </div>
-            </div>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <!-- Cart content goes here -->
+          <div class="list-group panier-content">
+            <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+              <img class="w-25 h-25" src="./assets/images/booking/car-01.jpg" alt="">
+              <h3>hello</h3>
+            </div>
+            <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+              <img class="w-25 h-25" src="./assets/images/booking/car-01.jpg" alt="">
+              <h3>hello</h3>
+            </div>
+            <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+              <img class="w-25 h-25" src="./assets/images/booking/car-01.jpg" alt="">
+              <h3>hello</h3>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Checkout</button>
+        </div>
+      </div>
+    </div>
 
-</div>
+  </div>
 
 
   <script src="./assets/js/index.js"></script>

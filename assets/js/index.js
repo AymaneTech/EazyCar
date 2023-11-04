@@ -81,3 +81,10 @@ document.addEventListener("DOMContentLoaded", function() {
         cartModal.show();
     });
 });
+
+// fill the card 
+const panierContent = document.querySelector(".panier-content");
+const panierItem = document.querySelectorAll(".panier-item")
+
+panierContent.append(panierItem);
+
