@@ -1,8 +1,12 @@
 const localData = (JSON.parse(localStorage.getItem("carsData")));
+const panelItems = (JSON.parse(localStorage.getItem("PanelData")));
 const cardsParent = document.querySelector("#cardsParent");
 const pageNum = document.querySelectorAll(".page-num");
 const allcards = document.querySelector(".cards");
 const addCart = document.querySelectorAll("#addCart");
+
+const panierContent = document.querySelector(".panier-content");
+
 
 var panelArr = [];
 var panelCounter = document.getElementById("panelCounter");
@@ -65,26 +69,40 @@ function filterFunction() {
 //        add corder to local storage
 
 var addCard = document.querySelectorAll(".addCard");
+
 addCard.forEach((element, index) => {
   element.addEventListener("click", () => {
-    panelCounter.textContent++;
+
     panelArr.push(localData[index]);
+    
+    panelCounter.textContent++;
     localStorage.setItem("PanelData", JSON.stringify(panelArr));
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const openCartButton = document.getElementById("openCartButton");
+const openCartButton = document.getElementById("openCartButton");
 
-    openCartButton.addEventListener("click", function() {
-        const cartModal = new bootstrap.Modal(document.getElementById("cartModal"));
-        cartModal.show();
-    });
+openCartButton.addEventListener("click", function () {
+  const cartModal = new bootstrap.Modal(document.getElementById("cartModal"));
+  cartModal.show();
 });
+addCartPanel();
 
-// fill the card 
-const panierContent = document.querySelector(".panier-content");
-const panierItem = document.querySelectorAll(".panier-item")
+function addCartPanel() {
+  panierContent.innerHTML = '';
+  panelItems.forEach((panelItem) => {
+    const panelItemHTML = `
+      <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+        <img class="w-25 h-25" src="${panelItem.image}" alt="">
+        <div>
+          <h3>${panelItem.name}</h3>
+          <p>${panelItem.description}</p>
+        </div>
+      </div>
+    `;
+    panierContent.innerHTML += panelItemHTML;
+  });
+}
 
-panierContent.append(panierItem);
+
 
