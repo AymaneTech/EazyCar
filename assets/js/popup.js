@@ -13,11 +13,3 @@ btns.forEach(btn => {
 
 });
 
-
-// btns.forEach(element => {
-//     element.addEventListener("click", function () {
-//         carName[i].textContent = carsdata[i].name;
-//         carDesc[i].textContent = carsdata[i].description;
-//         carImage[i].src = carsdata[i].image;
-//     });
-// });

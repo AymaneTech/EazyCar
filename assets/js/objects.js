@@ -12,7 +12,7 @@ var customizeArray = [];
 var customeId = 0;
 
 // FUNCTIONS
-function fill(){
+function fill() {
   for (let i = 0; i < cards.length; i++) {
     carName[i].textContent = carsdata[i].name;
     carDesc[i].textContent = carsdata[i].description;
@@ -20,7 +20,7 @@ function fill(){
     carImage[i].src = carsdata[i].image;
   }
 }
-function btnModal (index) {
+function btnModal(index) {
   modals.innerHTML = ''
   const html = `<div class="modal-dialog d-flex justify-content-center" role="document">
      <div class="modal-content d-flex justify-content-center align-items-center mx-0 w-auto pt-4 pb-4">
@@ -34,7 +34,7 @@ function btnModal (index) {
        </div>
        <div class="pt-4 d-flex justify-content-between gap-4 px-2">
          <button type="button" class="btn fw-medium" data-bs-dismiss="modal">Close</button>
-         <button type="button" class="btn btn1">Rent Now</button>
+         <a href="./devis.html" type="button" class="btn btn1">Rent Now</a>
          <a  type="button" href="./customize.html" class="btn customize fw-medium">Customize</a>
        </div>
      </div>
@@ -52,38 +52,38 @@ function btnModal (index) {
       name: carsdata[index].name,
       price: carsdata[index].price,
       description: carsdata[index].description,
-      image: carsdata[index].image
+      image: carsdata[index].image,
+      category: carsdata[index].category
     };
     customizeArray.push(newCustomize);
-    console.log(customizeArray);
     localStorage.setItem("carToCustomize", JSON.stringify(customizeArray));
     customeId++;
   });
 };
 
-function pagination_function (j){
+function pagination_function(j) {
   for (let i = 0; i < cards.length; i++) {
     carName[i].textContent = carsdata[j].name;
     carDesc[i].textContent = carsdata[j].description;
     carPrice[i].textContent = carsdata[j].price;
     carImage[i].src = carsdata[j].image;
-  j++;
-}
+    j++;
+  }
 }
 
-function PAGES () {
-  one.addEventListener("click", function(){
+function PAGES() {
+  one.addEventListener("click", function () {
     let j = 0;
-    pagination_function (j);  
-    
+    pagination_function(j);
+
   })
-  two.addEventListener("click", function(){
+  two.addEventListener("click", function () {
     let j = 10;
-    pagination_function (j);
+    pagination_function(j);
   });
-  three.addEventListener("click", function(){
+  three.addEventListener("click", function () {
     let j = 19;
-    pagination_function (j);
+    pagination_function(j);
   });
 }
 // pagination part
@@ -94,7 +94,7 @@ var three = document.getElementById("three");
 
 
 fill();
-PAGES ();
+PAGES();
 
 
 var listButtons = document.querySelectorAll('.list-toggle');
@@ -104,28 +104,28 @@ var listPopup = document.querySelectorAll('.listPopup');
 
 
 var gridhtml = '';
-document.querySelectorAll(".cards").forEach(function(card) {
-    gridhtml += card.innerHTML;
+document.querySelectorAll(".cards").forEach(function (card) {
+  gridhtml += card.innerHTML;
 });
 
 
-gridbuttons.forEach(function(gridbutton) {
-    gridbutton.addEventListener("click", function() {
-        var gridCards = document.querySelectorAll(".cards");
-        gridCards.forEach(function(card) {
-            card.innerHTML = gridhtml;
-        });
+gridbuttons.forEach(function (gridbutton) {
+  gridbutton.addEventListener("click", function () {
+    var gridCards = document.querySelectorAll(".cards");
+    gridCards.forEach(function (card) {
+      card.innerHTML = gridhtml;
     });
+  });
 });
 
-listButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-      var gridCards = document.querySelectorAll(".cards");
-      gridCards.forEach(function(card) {
-          card.innerHTML = "";
-        let j = 19;
-          for (let i = 0; i < cards.length; i++) {
-            card.insertAdjacentHTML('beforeend', `<div class="carda flex-column d-flex gap-4 px-5">
+listButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    var gridCards = document.querySelectorAll(".cards");
+    gridCards.forEach(function (card) {
+      card.innerHTML = "";
+      let j = 19;
+      for (let i = 0; i < cards.length; i++) {
+        card.insertAdjacentHTML('beforeend', `<div class="carda flex-column d-flex gap-4 px-5">
           <div class="d-flex gap-3 shadow  bg-white rounded">
             <img src="${carsdata[i].image}" class="w-25 card-img-top" alt="Image" style="border-radius: 7%; height: 12rem;">
             <div class="card-body">
@@ -138,33 +138,8 @@ listButtons.forEach(function(button) {
             </div>
           </div>
 </div>`)
-          j++;
-        }
-      });
+        j++;
+      }
+    });
   });
 });
-
-
-const filterMenuItem = document.querySelectorAll(".filter-btn");
-const carItem = document.querySelectorAll(".card");
-
-filterMenuItem.forEach(item => {
-    item.addEventListener("click", function() {
-        let value = this.getAttribute("data-filter");
-
-        carItem.forEach(function(filter) {
-            if(!filter.classList.contains(value)){
-                filter.style.display = "none";
-            }
-
-            else{ 
-                filter.style.display = "block";
-            }
-        });
-    });
-});
-
-
-
-
-
