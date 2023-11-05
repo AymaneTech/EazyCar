@@ -90,30 +90,44 @@ addCartPanel();
 var listButtons = document.querySelector(".list-toggle");
 var gridButtons = document.querySelector(".grid-toggle");
 var cardsContainer = document.querySelector("#cardsParent");
-
+listButtons.addEventListener("click", function () {
+  // Switch to grid view
+  createListItemHTML()
+});
 listButtons.addEventListener("click", function () {
     cardsContainer.innerHTML = ""; // Clear the current content
     
     localData.forEach(function (car, index) {
       const listItemHTML = createListItemHTML(car, index);
-      cardsContainer.insertAdjacentHTML("beforeend", listItemHTML);
+      cardsContainer.insertAdjacentHTML("afterbegin", listItemHTML);
+    });
+  });
+
+  listButtons.addEventListener("click", function () {
+    // Switch to Liste view
+    createListItemHTML()
+  });
+  listButtons.addEventListener("click", function () {
+    cardsContainer.innerHTML = ""; // Clear the current content
+    
+    localData.forEach(function (car,index) {
+      const listItemHTML = `<div class="border gap-5 py-3 d-flex w-75 h-50 list-item">
+      <img class="w-25 h-50 card-img-top" src="${car.image}" alt="Image">
+      <div class="list-details">
+      <h3>${car.name}</h3>
+      <p>${car.description}</p>
+      <p>${car.price}</p>
+      <button class="button addCard " onclick='addTOCard(event)' data-index="${index}">Rent Now</button>
+      </div>
+      </div>` ;
+      cardsContainer.insertAdjacentHTML("afterbegin", listItemHTML);
     });
   });
 
 
-function createListItemHTML(car, index) {
-  return `<div class="border gap-5 py-3 d-flex w-75 h-50 list-item">
-  <img class="w-25 h-50 card-img-top" src="${car.image}" alt="Image">
-  <div class="list-details">
-  <h3>${car.name}</h3>
-  <p>${car.description}</p>
-  <p>${car.price}</p>
-  <button class="button addCard " onclick='addTOCard(event)' data-index="${index}">Rent Now</button>
-  </div>
-  </div>`;
 
   
-}
+
 
 gridButtons.addEventListener("click", function () {
   // Switch to grid view
@@ -164,24 +178,86 @@ function hide(start, stop) {
 
 
 // Filter
+// Function to filter cars based on a category gridd
+
+function filterCars(category) {
+  if (category === "all") {
+    return localData; 
+  } else {
+    return localData.filter(car => car.category === category); 
+  }
+
+ }
+// function filterCarsliste(category) {
+//   if (category === "all") {
+//     return localData; 
+//   } else {
+//     return localData.filter(car => car.category === category); 
+//   }
+// }
+
+// // Function to grid  
+function updateDisplayedCars(filteredCars) {
+  cardsContainer.innerHTML = ""; // Clear the current content
+
+  filteredCars.forEach(function (car, index) {
+    const gridItemHTML = `<div class="card col-md-3 col-lg-4 w-100">
+      <img class="card-img-top" src="${car.image}" alt="Image">
+      <div class="card-body">
+        <h5 class="card-title">${car.name}</h5>
+        <p class="card-text">${car.description}</p>
+        <div class="details d-flex align-items-center justify-content-between">
+          <p class="card-price bold m-0 m-0">${car.price}</p>
+          <button onclick='addTOCard(event)' class="button addCard" data-index="${index}">Rent Now</button>
+        </div>
+      </div>
+    </div>`;
 
 
-
-
-  filterItem.forEach(item => {
-   item.addEventListener("click", function () {
-      const dataFilter = this.getAttribute("data-filter").toLowerCase();
-       console.log(dataFilter);
-     localData.forEach((car, index) => {
-       const cardCategory = car.category.toLowerCase();
-        const cardElement = card[index];
-         if(dataFilter === "all" ){
-          cardElement.style.display = "block";
-         }else if ( dataFilter === cardCategory) {
-          cardElement.style.display = "block";
-        } else {
-          cardElement.style.display = "none";
-        }
-      });
-    });
+    cardsContainer.insertAdjacentHTML("afterbegin", gridItemHTML);
   });
+}
+
+
+// // filltre liste 
+
+// function updateListedCars(filterCarsliste) {
+//   cardsContainer.innerHTML = ""; // Clear the current content
+
+//   filterCarsliste.forEach(function (car, index) {
+//     const listItemHTML = `<div class="border gap-5 py-3 d-flex w-75 h-50 list-item">
+//       <img class="w-25 h-50 card-img-top" src="${car.image}" alt="Image">
+//       <div class="list-details">
+//         <h3>${car.name}</h3>
+//         <p>${car.description}</p>
+//         <p>${car.price}</p>
+//         <button class="button addCard" onclick='addTOCard(event)' data-index="${index}">Rent Now</button>
+//       </div>
+//     </div>`;
+
+//     cardsContainer.insertAdjacentHTML("afterbegin", listItemHTML);
+//   });
+// }
+
+
+
+
+// //Filter buttons  liste
+// filterItem.forEach(button => {
+//   button.addEventListener("click", function () {
+//     const filter = button.getAttribute("data-filter");
+//     const filteredliste = filterCarsliste(filter);
+//     updateListedCars(filteredliste);
+//   });
+// });
+  // Filter buttons grid
+filterItem.forEach(button => {
+  button.addEventListener("click", function () {
+    const filter = button.getAttribute("data-filter");
+    const filteredCars = filterCars(filter);
+    updateDisplayedCars(filteredCars);
+  });
+});
+
+
+  

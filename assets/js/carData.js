@@ -5,7 +5,7 @@ const cars = [
         price: "2500 DH",
         description: "A reliable and fuel-efficient sedan.",
         image: "./assets/images/booking/car-01.jpg",
-        category: "hybird",
+        category: "Hybird",
         page: 1,
     },
     {
@@ -68,7 +68,7 @@ const cars = [
         price: "24000 DH",
         description: "A stylish and comfortable midsize sedan.",
         image: "./assets/images/booking/car-08.jpg",
-        category: "hybird",
+        category: "Hybird",
         page: 2,
     },
     {
@@ -77,7 +77,7 @@ const cars = [
         price: "45000 DH",
         description: "A luxury compact car with a sporty feel.",
         image: "./assets/images/booking/car-09.jpg",
-        category: "hybird",
+        category: "Hybird",
         page: 2,
     },
     {
@@ -86,7 +86,7 @@ const cars = [
         price: "22000 DH",
         description: "A versatile and fun-to-drive compact hatchback.",
         image: "./assets/images/booking/car-10.jpg",
-        category: "hybird",
+        category: "Hybird",
         page: 2,
     },
     {
@@ -95,7 +95,7 @@ const cars = [
         price: "48000 DH",
         description: "An electric car known for its cutting-edge technology.",
         image: "./assets/images/booking/car-11.jpg",
-        category: "hybird",
+        category: "Hybird",
         page: 2,
     },
     {
