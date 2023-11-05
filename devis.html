@@ -27,7 +27,7 @@
     <header class="devis w-100 h-100 ">
         <div class="row  px-5 py-3 ">
             <div class="col-6 ">
-                <img src="assets/images/LOGO.png" alt="Logo de car ">
+          <a href="index.html"><img src="assets/images/LOGO.png" alt="Logo de car "></a> 
             </div>
             <div class="col-6 bg-white text-end">
                 <h2>Devis</h2>
@@ -36,16 +36,17 @@
     </header>
     <div class="  ps-5 " style="margin: 5% 0 5% 20% ;">
         <h2> DATE</h2>
-        <span id="date-now">02/11/2023</span>
+        <span id="date-now"></span>
     </div>
     <section class="Arry-tab d-flex justify-content-evenly   mb-5">
         <div class="">
-            <h2> Car</h2>
-            <span id="marque">Exemple</span>
+            <h2> Car: <span id="name-car"></span></h2>
+            <span id="marque"></span>
+            <span id="option"></span>
         </div>
         <div>
             <h2> PRIX</h2>
-            <span id="prix"> 129,12</span>
+            <span id="prix"> </span>
         </div>
     </section>
     <div class=" d-flex justify-content-evenly ">
@@ -53,10 +54,10 @@
             <h2>TTC : </h2>
         </div>
         <div class="prix-total">
-            <h2> <span id="prix-ttc">123,23</span>DH</h2>
+            <h2> <span id="prix-ttc"></span>DH</h2>
         </div>
     </div>
-    <button class=" bg-danger rounded-pill py-2 px-4 text-white border-0 " style="margin:5% 25%;">
+    <button class=" bg-danger rounded-pill py-2 px-4 text-white border-0 " onclick="printPage()" style="margin:5% 25%;">
         DOWNLOAD
     </button>
 
