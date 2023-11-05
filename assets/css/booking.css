@@ -210,3 +210,12 @@
     background-color: wheat;
     box-shadow:;
 } */
+.button-remove{
+    cursor: pointer;
+    border-radius: 100vmax;
+    border: 3px solid var(--clr-primary);
+    padding: 0.3em 2em;
+    color: var(--clr-secondary);
+    background: #fff;
+   
+  }
