@@ -162,19 +162,19 @@ createGridItemHTML();
 
 
 // Pagination
-var card = document.querySelectorAll(".card");
+// var card = document.querySelectorAll(".card");
 
-function hide(start, stop) {
-   console.log(card);
-  card.forEach((element, index) => {
+// function hide(start, stop) {
+//    console.log(card);
+//   card.forEach((element, index) => {
     
-    if (start <= index && index < stop) {
-      element.style.display = "block";
-    } else {
-      element.style.display = "none";
-    }
-  });
-}
+//     if (start <= index && index < stop) {
+//       element.style.display = "block";
+//     } else {
+//       element.style.display = "none";
+//     }
+//   });
+// }
 
 
 // Filter
@@ -188,13 +188,6 @@ function filterCars(category) {
   }
 
  }
-// function filterCarsliste(category) {
-//   if (category === "all") {
-//     return localData; 
-//   } else {
-//     return localData.filter(car => car.category === category); 
-//   }
-// }
 
 // // Function to grid  
 function updateDisplayedCars(filteredCars) {
@@ -219,37 +212,8 @@ function updateDisplayedCars(filteredCars) {
 }
 
 
-// // filltre liste 
-
-// function updateListedCars(filterCarsliste) {
-//   cardsContainer.innerHTML = ""; // Clear the current content
-
-//   filterCarsliste.forEach(function (car, index) {
-//     const listItemHTML = `<div class="border gap-5 py-3 d-flex w-75 h-50 list-item">
-//       <img class="w-25 h-50 card-img-top" src="${car.image}" alt="Image">
-//       <div class="list-details">
-//         <h3>${car.name}</h3>
-//         <p>${car.description}</p>
-//         <p>${car.price}</p>
-//         <button class="button addCard" onclick='addTOCard(event)' data-index="${index}">Rent Now</button>
-//       </div>
-//     </div>`;
-
-//     cardsContainer.insertAdjacentHTML("afterbegin", listItemHTML);
-//   });
-// }
 
 
-
-
-// //Filter buttons  liste
-// filterItem.forEach(button => {
-//   button.addEventListener("click", function () {
-//     const filter = button.getAttribute("data-filter");
-//     const filteredliste = filterCarsliste(filter);
-//     updateListedCars(filteredliste);
-//   });
-// });
   // Filter buttons grid
 filterItem.forEach(button => {
   button.addEventListener("click", function () {

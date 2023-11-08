@@ -29,7 +29,9 @@ prittc.textContent = totalPrice;
 
 
 function printPage() {
-    window.print(); // This opens the browser's print dialog
+    window.print(); 
+    // This opens the browser's print dialog
+    
   }
 
 
