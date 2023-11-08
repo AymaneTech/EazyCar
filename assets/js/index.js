@@ -195,199 +195,110 @@ function createListItem(item, key) {
     </div>
     
     </div>
-    `;
-    panierContent.innerHTML += panelItemHTML;
-  });
-  
-  const removeButtons = document.querySelectorAll(".removeItem");
-  removeButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const index = event.target.getAttribute("data-index");
-      if (index !== null) {
-        panelArr.splice(index, 1);
-        localStorage.setItem("PanelData", JSON.stringify(panelArr));
-        updatePanelCounter();
-        addCartPanel();
-      }
-    });
-  });
+  `;
+  return newdiv;
 }
 
-updatePanelCounter();
-addCartPanel();
-// gird & Liste
 
-var listButtons = document.querySelector(".list-toggle");
-var gridButtons = document.querySelector(".grid-toggle");
-var cardsContainer = document.querySelector("#cardsParent");
-listButtons.addEventListener("click", function () {
-  // Switch to grid view
-  createListItemHTML()
-});
-listButtons.addEventListener("click", function () {
-    cardsContainer.innerHTML = ""; // Clear the current content
-    
-    localData.forEach(function (car, index) {
-      const listItemHTML = createListItemHTML(car, index);
-      cardsContainer.insertAdjacentHTML("afterbegin", listItemHTML);
-    });
-  });
+// customize button
 
-  listButtons.addEventListener("click", function () {
-    // Switch to Liste view
-    createListItemHTML()
-  });
-  listButtons.addEventListener("click", function () {
-    cardsContainer.innerHTML = ""; // Clear the current content
-    
-    localData.forEach(function (car,index) {
-      const listItemHTML = `<div class="border gap-5 py-3 d-flex w-75 h-50 list-item">
-      <img class="w-25 h-50 card-img-top" src="${car.image}" alt="Image">
-      <div class="list-details">
-      <h3>${car.name}</h3>
-      <p>${car.description}</p>
-      <p>${car.price}</p>
-      <button class="button addCard " onclick='addTOCard(event)' data-index="${index}">Rent Now</button>
-      </div>
-      </div>` ;
-      cardsContainer.insertAdjacentHTML("afterbegin", listItemHTML);
-    });
-  });
-
-
-
-  
-
-
-gridButtons.addEventListener("click", function () {
-  // Switch to grid view
-  createGridItemHTML()
-});
-
-function createGridItemHTML() {
-  cardsContainer.innerHTML = ""; // Clear the current content
-  
-  localData.forEach(function (car, index) {
-    const gridItemHTML= `<div class="card col-md-3 col-lg-4 w-100">
-    <img class="card-img-top" src="${car.image}" alt="Image">
-    <div class="card-body">
-    <h5 class="card-title">${car.name}</h5>
-    <p class="card-text">${car.description}</p>
-    <div class="details d-flex align-items-center justify-content-between">
-    <p class="card-price bold m-0 m-0">${car.price}</p>
-    <button onclick='addTOCard(event)' class="button addCard" data-index="${index}">Rent Now</button>
-    </div>
-    </div>
-    </div>`;
-    
-    cardsContainer.insertAdjacentHTML("afterbegin", gridItemHTML);
+document.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("customize")) {
+    const deleteBtns = Array.from(document.querySelectorAll(".customize"));
+    const btnIndex = deleteBtns.indexOf(evt.target);
+    customize(btnIndex);
+    window.open("./customize.html", "_blank");
   }
-);
+});
+
+
+// deleting button
+
+document.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains("delete-car")) {
+    const deleteBtns = Array.from(document.querySelectorAll(".delete-car"));
+    const btnIndex = deleteBtns.indexOf(evt.target);
+
+    delelement(btnIndex);
+  }
+});
+
+// customize
+
+function customize(key) {
+  const storedCartItems = JSON.parse(localStorage.getItem("PanelData"));
+  const customizeitem = storedCartItems[key]; 
+
+  localStorage.setItem("customizeitem", JSON.stringify(customizeitem));
+}
+
+
+// deleting items from cart
+
+function delelement(i) {
+  const storedPanelItems = JSON.parse(localStorage.getItem("PanelData"));
+  const listContent = document.querySelector(".list-content");
+  const listContentChlidren = document.querySelectorAll(".list-content li");
+
+  storedPanelItems.splice(i, 1);
+ listcard = storedPanelItems
+  localStorage.setItem("PanelData", JSON.stringify(listcard));
+  console.log(listcard)
+  console.log(storedPanelItems)
+  console.log(totalprice)
+  listContent.removeChild(listContentChlidren[i]);
+  // location.reload();
+  reloadcard(); 
+}
+
+
+
+
+
+function loadFromLocalStorage() {
+  const storedCartItems = JSON.parse(localStorage.getItem("PanelData"));
+  if (storedCartItems) {
+    listcard = storedCartItems;
+    reloadcard();
+
+  }
+}
+
+loadFromLocalStorage();
+
+
+
+
+
+
+
+
+function reloadcard() {
+  listcart.innerHTML = "";
+  totalprice = 0;
+  countpanier = 0;
+
+  listcard.forEach((value, key) => {
+    console.log("looping")
+    totalprice += value.price;
+    countpanier++;
+    add(value, key);
+  });
+console.log(totalprice)
+  total.innerHTML = totalprice.toLocaleString() + " DH";
+  count.innerHTML = countpanier;
+  localStorage.setItem("totalprice", JSON.stringify(totalprice));
   
 }
 
-createGridItemHTML();
 
-
-
-
-// Pagination
-var card = document.querySelectorAll(".card");
-
-function hide(start, stop) {
-   console.log(card);
-  card.forEach((element, index) => {
-    
-    if (start <= index && index < stop) {
-      element.style.display = "block";
-    } else {
-      element.style.display = "none";
-    }
-  });
-}
-
-
-// Filter
 // Function to filter cars based on a category gridd
 
-function filterCars(category) {
-  if (category === "all") {
-    return localData; 
-  } else {
-    return localData.filter(car => car.category === category); 
-  }
-
- }
-// function filterCarsliste(category) {
-//   if (category === "all") {
-//     return localData; 
-//   } else {
-//     return localData.filter(car => car.category === category); 
-//   }
-// }
-
-// // Function to grid  
-function updateDisplayedCars(filteredCars) {
-  cardsContainer.innerHTML = ""; // Clear the current content
-
-  filteredCars.forEach(function (car, index) {
-    const gridItemHTML = `<div class="card col-md-3 col-lg-4 w-100">
-      <img class="card-img-top" src="${car.image}" alt="Image">
-      <div class="card-body">
-        <h5 class="card-title">${car.name}</h5>
-        <p class="card-text">${car.description}</p>
-        <div class="details d-flex align-items-center justify-content-between">
-          <p class="card-price bold m-0 m-0">${car.price}</p>
-          <button onclick='addTOCard(event)' class="button addCard" data-index="${index}">Rent Now</button>
-        </div>
-      </div>
-    </div>`;
-
-
-    cardsContainer.insertAdjacentHTML("afterbegin", gridItemHTML);
-  });
-}
-
-
-// // filltre liste 
-
-// function updateListedCars(filterCarsliste) {
-//   cardsContainer.innerHTML = ""; // Clear the current content
-
-//   filterCarsliste.forEach(function (car, index) {
-//     const listItemHTML = `<div class="border gap-5 py-3 d-flex w-75 h-50 list-item">
-//       <img class="w-25 h-50 card-img-top" src="${car.image}" alt="Image">
-//       <div class="list-details">
-//         <h3>${car.name}</h3>
-//         <p>${car.description}</p>
-//         <p>${car.price}</p>
-//         <button class="button addCard" onclick='addTOCard(event)' data-index="${index}">Rent Now</button>
-//       </div>
-//     </div>`;
-
-//     cardsContainer.insertAdjacentHTML("afterbegin", listItemHTML);
-//   });
-// }
 
 
 
 
-// //Filter buttons  liste
-// filterItem.forEach(button => {
-//   button.addEventListener("click", function () {
-//     const filter = button.getAttribute("data-filter");
-//     const filteredliste = filterCarsliste(filter);
-//     updateListedCars(filteredliste);
-//   });
-// });
-  // Filter buttons grid
-filterItem.forEach(button => {
-  button.addEventListener("click", function () {
-    const filter = button.getAttribute("data-filter");
-    const filteredCars = filterCars(filter);
-    updateDisplayedCars(filteredCars);
-  });
-});
 
 
-  
+
+

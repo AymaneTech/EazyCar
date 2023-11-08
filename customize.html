@@ -67,8 +67,8 @@
             <div class="img-desc pb-3 w-100">
               <h1 style="color: red;">Fuel Your Passion Discover</h1>
               <p class="car-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quaerat voluptatem est optio vero. Ipsum </p>  
-            </div>
-            <img class="w-100 img-p" >
+            </div> 
+            <img class="w-100" alt="">
           </div>
           <div class="col-md-6 gap-2 my-2 d-flex w-100">
             <div class="w-100  main-img d-flex align-items-center" style="background: #000000;  /* fallback for old browsers */
@@ -84,8 +84,8 @@
 
         <div class="details-desc col-md-6 px-5">
           <div class="car-name mb-5">
-            <h2 class="card-title-personalisation mb-0">
-              <!-- Nissan GT-R -->
+            <h2 class="card-title-personalisation mb-0 fs-1 fw-bold">
+              Nissan GT-R
             </h2>
             <img class="h-auto" src="" alt="">
             <span class="light-gray reviews mx-2">+440 reviewer</span>
@@ -97,9 +97,7 @@
           <div class="car-features row lh-lg">
             <div class="feature-item col-6">
               <span class="light-gray me-5">Type Car</span>
-              <strong class="car-categorey">
-                <!-- Sport -->
-              </strong>
+              <strong class="car-categorey">Sport</strong>
             </div>
             <div class="feature-item col-6">
               <span class="light-gray me-5">Audio System</span>
@@ -115,8 +113,8 @@
             </div>
           </div>
           <div class="pricing mt-5 d-flex align-items-baseline justify-content-between">
-            <strong class="pricePersonalisation"></strong>
-            <a href="./devis.html" class="button button-inverted">Rent Now</a>
+            <strong class="pricePersonalisation fw-bold fs-3" style="color: red;">80.00 DH/days</strong>
+            <a href="./devis.html" class="button button-inverted text-center text-decoration-none">Rent Now</a>
           </div>
         </div>
       </div>
@@ -124,24 +122,22 @@
     <section class="customize-section py-5 px-3  w-100 d-flex justify-content-evenly flex-md-column flex-xl-row flex-column me-lg-0 me-md-1 me-4 gap-3 ">
       <div class="card customize-card p-5 mx-auto w-100 " >
         <div class="customize-item py-3">
-          <label class="mb-3" for="Toit">Toit</label>
-          <select class="form-select" aria-label="Default select ">
-            <option selected value="Panoramic">Panoramic</option>
-            <option value="Electric">Electric</option>
+          <label class="mb-3" for="Toit">Steering</label>
+          <select class="form-select" aria-label="Default select" id="Steering">
             <option value="Manual">Manual</option>
+            <option value="Electric">Electric</option>
           </select>
         </div>
         <div class="customize-item py-3">
-          <label class="mb-3" for="Toit">High end audio system</label>
-          <select class="form-select1" aria-label="Default select ">
-            <option selected  value="Dolby">Dolby</option>
-            <option value="Atmos">Atmos</option>
-            <option value="Atmos">Atmos</option>
+          <label class="mb-3" for="Toit">Audio System</label>
+          <select class="form-select" aria-label="Default select " id="audio">
+            <option selected value="Dolby">Dolby</option>
+            <option value="Atomos">Atmos</option>
           </select>
         </div>
         <div class="customize-item py-3">
           <label class="mb-3" for="Toit">Station</label>
-          <select class="form-select2" aria-label="Default select ">
+          <select class="form-select" aria-label="Default select " id="Station">
             <option selected value="CD">CD</option>
             <option value="Radio">Radio</option>
             <option value="Tactile">Tactile</option>
@@ -208,7 +204,7 @@
 
 
 
- <script src="index.js"></script>
+ <script src="./assets/js/index.js"></script>
   
   <!-- <script src="./assets/js/filter.js"></script> -->
 

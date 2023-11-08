@@ -224,7 +224,7 @@
 
  .list {
     top: 0;
-    right: -1000px !important;
+    right: -100% !important;
     transition: 600ms;
     background-color: var(--clr-secondary);
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -308,12 +308,4 @@ li {
 
 .customize > a {
     pointer-events: none;
-}
-
-
-
-@media (max-width:767px) {
-    .list {
-        width: 100vw !important;
-    }
 }
