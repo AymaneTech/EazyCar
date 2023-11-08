@@ -16,8 +16,8 @@
   <!-- styling files -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/booking.css">
-  <link rel="stylesheet" href="./assets/css/home.css">
   <link rel="stylesheet" href="./assets/css/customizae.css">
+  <link rel="stylesheet" href="./assets/css/home.css">
   <!-- CDN Links -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,56 +25,58 @@
 
 </head>
 
-<body>
-  <!-- navbar section -->
-  <nav class="navbar navbar-expand-xl px-5 fixed-top bg-white m-0">
+<body style="">
+   <!-- navbar section --> <nav class="navbar navbar-expand-xl px-5 fixed-top bg-white m-0" style="z-index: 1;">
     <div class="container-fluid">
       <a class="navbar-brand fs-2 fw-bold" href="#">
         <img src="./assets/images/LOGO.png" alt="" />
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarDark"
-        aria-controls="navbarDark"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark"
+        aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon custom-black-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarDark">
         <ul class="navbar-nav mb-2 mb-xl-0 ms-auto p-2 text-center">
           <li class="nav-item me-3">
-            <a class="nav-link active bold nav-text-top" href="./index.html">Home</a>
+            <a class="nav-link  nav-text-top" href="./index.html">Home</a>
           </li>
           <li class="nav-item me-3">
             <a class="nav-link nav-text-top" href="./about.html">About</a>
           </li>
           <li class="nav-item me-3">
-            <a class="nav-link nav-text-top" href="./booking.html">Reservation</a>
+            <a class="nav-link nav-text-top active bold" href="./booking.html">Reservation</a>
           </li>
           <li class="nav-item me-3">
             <a class="nav-link nav-text-top" href="./contact.html">Contact</a>
           </li>
+       
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> 
+
+
+
+
   <!-- main content -->
   <main class="py-5">
     <section class="container-fluid pt-5">
       <div class="details-section row px-0 mx-0">
         <div class="images col-md-6">
-          <div class="main-img text-light p-5">
-            <div class="img-desc pb-3">
-              <h1>Fuel Your Passion Discover aymane</h1>
+          <div class="main-img text-light p-5 bg-dark" style="box-shadow: rgb(38, 57, 77) 1px 2px 10px 1px;">
+            <div class="img-desc pb-3 w-100">
+              <h1 style="color: red;">Fuel Your Passion Discover</h1>
               <p class="car-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quaerat voluptatem est optio vero. Ipsum </p>  
-            </div>
-            <img class="w-100" src="./assets/images/bg/details.png" alt="">
+            </div> 
+            <img class="w-100" alt="">
           </div>
           <div class="col-md-6 gap-2 my-2 d-flex w-100">
-            <div class="w-100 h-75"><img class="w-100 h-100x" src="./assets/images/bg/details3.png" alt=""></div>
+            <div class="w-100  main-img d-flex align-items-center" style="background: #000000;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #e74c3c, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #e74c3c, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            ">
+              <img class="w-100 smallimage" " src="./assets/images/bg/details3.png" alt="">
+            </div>
             <div class="w-100 h-75"><img class="w-100 h-100x" src="./assets/images/bg/details1.png" alt=""></div>
             <div class="w-100 h-75"><img class="w-100 h-100x" src="./assets/images/bg/details2.png" alt=""></div>
           </div>
@@ -82,14 +84,14 @@
 
         <div class="details-desc col-md-6 px-5">
           <div class="car-name mb-5">
-            <h2 class="card-title-personalisation mb-0">
+            <h2 class="card-title-personalisation mb-0 fs-1 fw-bold">
               Nissan GT-R
             </h2>
-            <img class="h-auto" src="./assets/images/booking/starts.png" alt="">
+            <img class="h-auto" src="" alt="">
             <span class="light-gray reviews mx-2">+440 reviewer</span>
           </div>
           <div class="desc-text lh-lg">
-            <p class="primary-gray">NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the "race track"
+            <p class="primary-gray ">NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the "race track"
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, doloremque commodi totam architecto voluptatem .</p>
           </div>
           <div class="car-features row lh-lg">
@@ -98,21 +100,21 @@
               <strong class="car-categorey">Sport</strong>
             </div>
             <div class="feature-item col-6">
-              <span class="light-gray me-5">Capacity</span>
-              <strong>2 preson</strong>
+              <span class="light-gray me-5">Audio System</span>
+              <strong id="Audiosystem">Dolby</strong>
             </div>
             <div class="feature-item col-6">
               <span class="light-gray me-5">Steering</span>
-              <strong>Manual</strong>
+              <strong id="manuelorelectric">Manuel</strong>
             </div>
             <div class="feature-item col-6">
-              <span class="light-gray me-5">Gazoline</span>
-              <strong>70L</strong>
+              <span class="light-gray me-5">Station</span>
+              <strong id="Stationsystem">CD</strong>
             </div>
           </div>
           <div class="pricing mt-5 d-flex align-items-baseline justify-content-between">
-            <strong class="pricePersonalisation">80.00 DH/days</strong>
-            <a href="./devis.html" class="button button-inverted">Rent Now</a>
+            <strong class="pricePersonalisation fw-bold fs-3" style="color: red;">80.00 DH/days</strong>
+            <a href="./devis.html" class="button button-inverted text-center text-decoration-none">Rent Now</a>
           </div>
         </div>
       </div>
@@ -120,36 +122,33 @@
     <section class="customize-section py-5 px-3  w-100 d-flex justify-content-evenly flex-md-column flex-xl-row flex-column me-lg-0 me-md-1 me-4 gap-3 ">
       <div class="card customize-card p-5 mx-auto w-100 " >
         <div class="customize-item py-3">
-          <label class="mb-3" for="Toit">Toit</label>
-          <select class="form-select" aria-label="Default select ">
-            <option selected>Panoramic</option>
-            <option value="1">Electric</option>
-            <option value="2">Manual</option>
+          <label class="mb-3" for="Toit">Steering</label>
+          <select class="form-select" aria-label="Default select" id="Steering">
+            <option value="Manual">Manual</option>
+            <option value="Electric">Electric</option>
           </select>
         </div>
         <div class="customize-item py-3">
-          <label class="mb-3" for="Toit">High end audio system</label>
-          <select class="form-select" aria-label="Default select ">
-            <option selected>Dolby</option>
-            <option value="1">Atmos</option>
-            <option value="2">Atmos</option>
+          <label class="mb-3" for="Toit">Audio System</label>
+          <select class="form-select" aria-label="Default select " id="audio">
+            <option selected value="Dolby">Dolby</option>
+            <option value="Atomos">Atmos</option>
           </select>
         </div>
         <div class="customize-item py-3">
           <label class="mb-3" for="Toit">Station</label>
-          <select class="form-select" aria-label="Default select ">
-            <option selected>CD</option>
-            <option value="1">Radio</option>
-            <option value="2">Tactile</option>
+          <select class="form-select" aria-label="Default select " id="Station">
+            <option selected value="CD">CD</option>
+            <option value="Radio">Radio</option>
+            <option value="Tactile">Tactile</option>
           </select>
         </div>
         <div class="buttons-section  d-flex gap-2 ">
-          <button class="button-rest">Reset</button>
-          <button class="button-save">Save</button>
+          <button class="button-save w-100" id="saveButton" onclick="handlesoptions()">Save</button>
         </div>
       </div>
-      <div class="car-ss   ">
-        <img src="./assets/images/bg/details4.png" class="image-car" alt="">
+    <div class="car-ss main-img w-50">
+        <img src="./assets/images/bg/details4.png" class="image-car w-100" alt="">
       </div>
     </section>
   </main>
@@ -205,16 +204,19 @@
 
 
 
-  <script src="./assets/js/objects.js"></script>
-  <script src="./assets/js/carData.js"></script>
-  <script src="./assets/js/customize.js"></script>
+ <script src="index.js"></script>
   
   <!-- <script src="./assets/js/filter.js"></script> -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
-
+    crossorigin="anonymous"></script> 
+    
+  
+  
+  <script src="./assets/js/carData.js"></script>
+  <script src="./assets/js/filter.js"></script>
+  <script src="./assets/js/customize.js"></script>
 </body>
 
 </html>

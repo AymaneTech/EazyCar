@@ -1,28 +1,70 @@
-const carInfo = (JSON.parse(localStorage.getItem("carToCustomize")));
-var carsdata = (JSON.parse(localStorage.getItem("carsData")));
+const storedCartItems = JSON.parse(localStorage.getItem("customizeitem"));
+const PanelData = JSON.parse(localStorage.getItem("PanelData"));
+
+
 
 var nameInfo = document.querySelector(".card-title-personalisation");
 var carCategory = document.querySelector(".car-categorey");
 var priceInfo = document.querySelector(".pricePersonalisation");
-var imgInfo = document.querySelector(".main-img img");
+var imgInfo = document.querySelectorAll(".main-img img");
+var smallimage = document.querySelector(".smallimage");
 
-const today = new Date();
-const year = today.getFullYear();
-const month = today.getMonth() + 1; 
-const day = today.getDate();
-
-const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
-
-const dateElement = document.querySelector("#date-now")
 const marque = document.querySelector("#marque");
 
 // customize
-nameInfo.textContent = carInfo[0].name;
-carCategory.textContent = carInfo[0].category;
-priceInfo.textContent = carInfo[0].price;
-imgInfo.src = carInfo[0].image;
+nameInfo.textContent = storedCartItems.name;
+carCategory.textContent = storedCartItems.category;
+priceInfo.textContent = storedCartItems.price + " DH";
+imgInfo.src = storedCartItems.image2;
+// smallimage.src = storedCartItems.image2;
 
-// devis
-dateElement.textContent = formattedDate;
-marque.textContent = carInfo[0].name;
-console.log(carInfo[0].name);
+imgInfo.forEach(element => {
+    element.src = storedCartItems.image2;
+});
+
+// Assuming PanelData is an array of objects representing items to display
+
+
+
+var Steering = document.getElementById('Steering');
+var audio = document.getElementById('audio');
+var Station = document.getElementById('Station');
+var saveButton = document.getElementById('saveButton');
+
+var Audiosystem = document.getElementById('Audiosystem');
+var manuelorelectric = document.getElementById('manuelorelectric');
+var Stationsystem = document.getElementById('Stationsystem');
+
+
+function handlesoptions() {
+
+    let selectedSteering = Steering.value;
+    let selectedaudio = audio.value;
+    let selectedstation = Station.value;
+
+    localStorage.setItem('selecterSteering', selectedSteering);
+    localStorage.setItem('selectedaudio', selectedaudio);
+    localStorage.setItem('selectedstation', selectedstation);
+
+    manuelorelectric.textContent = localStorage.getItem('selecterSteering', selectedSteering);
+    Audiosystem.textContent = localStorage.getItem('selectedaudio', selectedaudio);
+    Stationsystem.textContent = localStorage.getItem('selectedstation', selectedstation);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
