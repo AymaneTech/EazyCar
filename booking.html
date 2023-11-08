@@ -87,7 +87,7 @@
         Customize Your Book, Your Way!
       </h1>
       <div class="hero-navigation">
-        <p class="d-flex align-items-center"><a href="" id="navLink" class="nav-link">Home</a>/ <a href="" id="navLink"
+        <p class="d-flex align-items-center"><a href="index.html" id="navLink" class="nav-link">Home</a>/ <a href="booking.html" id="navLink"
             class="nav-link active" style="color: red;">Booking</a></pc>
       </div>
     </section>
@@ -154,8 +154,8 @@
 
 
       <div class="listing-style d-flex  justify-content-center justify-content-md-end " style="margin: 0 20% 0 0;">
-        <i class="bi bi-grid grid-toggle"></i>
-        <i class="bi bi-list-task list-toggle"></i>
+        <i class="bi bi-grid grid-toggle" ></i>
+        <i class="bi bi-list-task list-toggle" ></i>
       </div>
 
 
@@ -172,7 +172,11 @@
       </div>
 
     </section>
-
+    <div class="modal fade" id="carModal" tabindex="-1" role="dialog" aria-labelledby="carModalLabel"
+      aria-hidden="true">
+  
+      <!-- modal in js file !!!!!!! -->
+    </div>
   </main>
 
 
@@ -225,8 +229,39 @@
 
   </footer>
 
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Cart content goes here -->
+          <div class="list-group panier-content">
+            <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+              <img class="w-25 h-25" src="./assets/images/booking/car-01.jpg" alt="">
+              <h3>hello</h3>
+            </div>
+            <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+              <img class="w-25 h-25" src="./assets/images/booking/car-01.jpg" alt="">
+              <h3>hello</h3>
+            </div>
+            <div class="list-group-item panier-item d-flex justify-content-space-between w-100">
+              <img class="w-25 h-25" src="./assets/images/booking/car-01.jpg" alt="">
+              <h3>hello</h3>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn "><a href="customize.html">Checkout</a></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/carData.js"></script>
