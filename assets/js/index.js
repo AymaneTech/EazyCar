@@ -103,8 +103,11 @@ function createGridItemHTML() {
         </div>
       </div>`;
 
+
       // Append the card to the current gridCard element
       gridCard.appendChild(card);
+
+      
     });
   });
 }

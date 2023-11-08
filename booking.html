@@ -141,11 +141,11 @@
       </p>
       <div class="product-nav d-flex flex-wrap align-items-center mt-5 mb-3">
         <div class="menu-filter text-center">
-          <button class="button filter-btn active" data-filter="all">View All</button>
-          <button class="button filter-btn " data-filter="Luxury">Luxury</button>
-          <button class="button filter-btn " data-filter="Classic">Classic</button>
-          <button class="button filter-btn " data-filter="Hybrid">Hybird</button>
-          <button class="button filter-btn " data-filter="Truck">Truck</button>
+          <button class="button filter-btn active" data-filter="all" onclick="createGridItemHTML()">View All</button>
+          <button class="button filter-btn " data-filter="Luxury" id="Luxury" onclick="filtrage('Luxury')">Luxury</button>
+          <button class="button filter-btn " data-filter="Classic" onclick="filtrage('classic')">Classic</button>
+          <button class="button filter-btn " data-filter="Hybrid" onclick="filtrage('hybrid')">Hybird</button>
+          <button class="button filter-btn " data-filter="Truck" onclick="filtrage('Truck')">Truck</button>
         </div>
         <div class="search-bar ">
           <input type="text" placeholder="Search for your car">
