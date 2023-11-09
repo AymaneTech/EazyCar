@@ -42,8 +42,14 @@ var TTC = totalprice * 1.2;
 TTCelement.textContent =  TTC;
 
 
+ var btn=document.getElementById("btn");
+function printPage(){
+     btn.style.display="none";
+        window.print();
 
 
+
+}
 
 
 
